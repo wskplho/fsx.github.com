@@ -1,5 +1,5 @@
 url: http://localhost:4000
-cdn: http://61924.nl/static
+cdn: http://cdn.61924.nl
 debug: true
 
 safe: false
