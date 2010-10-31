@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>{{ page.title }} - 61924</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="/style/screen-uncompressed.css" />
+    <link rel="author" title="About this website" href="./about.html" />
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" href="/atom.xml" />
+</head>
+<body>
+
+<div id="wrapper">
+    <noscript>
+        <div class="warning-bar">Javascript should be enabled...</div>
+    </noscript>
+
+    <header id="main-header">
+        <h1>61924</h1>
+
+        <nav>
+            <ul>
+                <li><a href="/">Blog</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+                <li><a href="/misc.html">Misc</a></li>
+                <li><a rel="author" href="/about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="main-content">
+        {{ content }}
+    </div>
+
+    <footer id="main-footer">
+        <p><small>Copyright © 2008-2010 Frank Smit — Made with <a href="http://jekyllrb.com/">Jekyll</a></small> <small><a class="t-link" href="#wrapper">↑</a></small></p>
+        <p><small>Links:
+            <a href="http://www.develophp.org/">DeveloPHP</a> -
+            <a href="http://www.medorion.net/">Medorion</a> -
+            <a href="http://www.jamierf.co.uk/">JamieRF</a> -
+            <a href="http://nealpoole.com/blog/">Neal Poole</a>
+        </small></p>
+    </footer>
+</div>
+
+<script type="text/javascript">
+var lloogg_clientid = '98100005c159c1d';
+var js_files = [];
+js_files.push(
+    '/js/jsimgbox2.js'
+);
+
+(function() {
+  function async_load() {
+    tag = document.getElementsByTagName('BODY')[0]
+    for (var i=0; i < js_files.length; i++) {
+      var s = document.createElement('script'); s.async = true;
+      s.src = js_files[i]; tag.appendChild(s)
+    }
+  }
+  if (window.attachEvent)
+    window.attachEvent('onload', async_load);
+  else
+    window.addEventListener('load', async_load, false);
+})();
+</script>
+{% if site.debug == false %}
+<script type="text/javascript" src="http://lloogg.com/l.js?c=98100005c159c1d"></script>
+{% endif %}
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+---
+layout: default
+---
+        <article id="content">
+            <header>
+                <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
+                <p>
+                    <time datetime="{{ page.date | date: "%Y-%m-%d" }}" pubdate>{{ page.date | date_to_string }}</time> —
+                    {{ page.author }} — <a href="{{ post.url }}#share">Share</a>
+                </p>
+            </header>
+            {{ content }}
+            <p class="tag-list">
+                Tags:
+                {% for tag in page.categories %}
+                <a rel="tag" href="/tags/{{ tag | hash }}.html">{{ tag }}</a>
+                {% endfor %}
+            </p>
+        </article>
+
+        <section id="share">
+            <ul>
+                <li><a rel="nofollow" id="share-delicious" href="http://delicious.com/post?url={{ site.url }}{{ page.url }}&amp;title={{ page.title | replace: ' ', '+' }}" title="Bookmark this post at Delicious">Bookmark at Delicious</a></li>
+                <li><a rel="nofollow" id="share-digg" href="http://digg.com/submit?phase=2&amp;url={{ site.url }}{{ page.url }}" title="Submit this post to Digg">Digg this!</a></li>
+                <li><a rel="nofollow" id="share-twitter" href="http://twitter.com/home?status=Currently+reading:+{{ site.url }}{{ page.url }}" title="Share this article with your Twitter followers">Tweet this!</a></li>
+                <li><a rel="nofollow" id="share-stumble" href="http://www.stumbleupon.com/submit?url={{ site.url }}{{ page.url }}&amp;title={{ page.title | replace: ' ', '+' }}" title="Share this post at StumbleUpon">Stumble this!</a></li>
+                <li><a rel="nofollow" id="share-reddit" href="http://reddit.com/submit?url={{ site.url }}{{ page.url }}&amp;title={{ page.title | replace: ' ', '+' }}" title="Share this post on Reddit">Share on Reddit</a></li>
+                <li><a rel="nofollow" id="share-addthis" href="http://www.addthis.com/bookmark.php?pub=franksmit&amp;url={{ site.url }}{{ page.url }}&amp;title={{ page.title | replace: ' ', '+' }}" title="Bookmark this article at your favorite social media site">Share this post at your favorite social media site</a></li>
+            </ul>
+        </section>

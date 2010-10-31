@@ -1,0 +1,25 @@
+---
+layout: post
+title: ImgBrowz0r 0.3.4
+author: Frank
+date: 2009-09-10 12:10:50 +0200
+categories: [PHP, ImgBrowz0r, Minor release]
+---
+
+It's done and it was actually not much work. And this will be the last release
+of the 0.3 branch. I will fix bugs for 0.3 until I released 0.4.
+
+Here are the things that are fixed/changed/added:
+
+ * Replaced str_replace() with preg_quote() for regex escaping.
+ * Added separate sorting options for images and directories.
+ * Made private methods/variables protected to make extending easier.
+ * Added filesize limit option.
+ * Added (preview) thumbnail generation for directories.
+ * Changed markup for thumbnails. It'll be easier to style it with CSS.
+ * Added memory peak usage to the example page (index.php). Now you can
+   see how much memory GD (not ImgBrowz0r) uses.
+
+Not that much, but there's not much to add anyway. ;)
+
+Downloads can be found at [the Github downloads page](http://github.com/FSX/imgbrowz0r/downloads).

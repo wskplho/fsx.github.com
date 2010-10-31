@@ -1,0 +1,38 @@
+---
+layout: post
+title: Jsimgbox 2.0
+author: Frank
+date: 2010-02-10 16:21:00 +0200
+categories: [Javascript, Jsimgbox, Major release]
+---
+
+I't finally done. Well, it was already done last week, but it didn't work in
+Internet Explorer for some reason.
+
+It looks like (still) IE doesn't support `getElementsByClassName()`, while all
+the other browsers support it. I don't know what the reason for that decision
+is, but it's quite annoying.
+
+Jsimgbox is a really simple Lightbox clone. It just shows an image and that's it.
+And it's only **1.552KB** when it's compressed with [YUI Compressor][1].
+
+It doesn't need a Javascript library like jQuery or Mootools. The old version, 0.2,
+does need Mootools, but the current version, 2.0, doesn't.
+
+This script has been tested in:
+
+ - Chromium 4.0.249.78 (36714) (Linux)
+ - Swiftfox 3.6 (Linux)
+ - Midori 0.2.2 (GTK+ 2.18.5, WebKitGTK+ 1.1.15) (Linux)
+ - Opera 10.20 Alpha 1 (Build 4744) (Linux)
+ - Internet Explorer 8 (Windows ?)
+
+[Click here to download Jsimgbox 2.0][2]
+or [here to visit the Git repository][3].
+
+The installation instructions can be found in the README file.
+
+
+ [1]: http://developer.yahoo.com/yui/compressor/
+ [2]: http://github.com/FSX/jsimgbox/downloads
+ [3]: http://github.com/FSX/jsimgbox

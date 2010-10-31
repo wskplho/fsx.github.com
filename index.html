@@ -1,0 +1,14 @@
+---
+layout: default
+title: Index
+---
+
+        <section id="previous-posts" class="nice-link-list">
+            <ul>
+                {% for post in site.posts limit:10 %}
+                <li><a href="{{ post.url }}"><time datetime="{{ post.date | date: "%Y-%m-%d" }}" pubdate>{{ post.date | date_to_string }}</time> » {{ post.title }}</a></li>
+                {% endfor %}
+            </ul>
+
+            <p>View <a href="/tags/cloud.html">all tags</a> or view the <a href="/archive.html">archive →</a></p>
+        </section>

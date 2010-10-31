@@ -1,0 +1,197 @@
+---
+layout: post
+title: Whoosh!
+author: Frank
+date: 2010-08-19 20:32:50 +0200
+categories: [Whoosh, Python, How to]
+---
+
+A few days ago I found [Whoosh][1]. It is a fast, featureful full-text indexing
+and searching library implemented in pure Python. And it doesn't require a lot
+of code to get something useful.
+
+In this post I'll show you how to make a simple search engine, which could be
+used on a website like I do. I'll put everything into a simple class, a thin
+wrapper around Whoosh, and add a piece in each example. The `...` is a
+replacement of a piece of code from the previous example and is not needed in
+the current example. Module imports will only be shown once per example. Just
+add the imports from the previous examples to the one you're looking at.
+
+Install Whoosh with `easy_install Whoosh` or `pip install Whoosh`. Or clone the
+Mercurial repository with `hg clone http://bitbucket.org/mchaput/whoosh`.
+
+First we need a schema that specifies the fields of a document in an index.
+Take a look at [Designing a schema][3] from the Whoosh documentation for more
+information.
+
+{% highlight python %}
+import whoosh.fields
+
+class SearchEngine(object):
+    schema = whoosh.fields.Schema(
+        url=whoosh.fields.ID(unique=True, stored=True),
+        title=whoosh.fields.TEXT(stored=True, phrase=False),
+        content=whoosh.fields.TEXT())
+{% endhighlight %}
+
+That's the same one I use for this website. We'll only use `content` to search
+through. `url` and `title` are going to be used to display the search results.
+`url` is unique, becuase it'll be possible to update/re-index documents later.
+
+{% highlight python %}
+import os, os.path
+import whoosh.index
+
+class SearchEngine(object):
+    ...
+    def __init__(self, index_path):
+        self.path = index_path
+        if not os.path.exists(index_path):
+            os.makedirs(index_path)
+
+    def create_index(self):
+        whoosh.index.create_in(self.path, self.schema)
+        self.open_index()
+
+    def open_index(self):
+        self._index = whoosh.index.open_dir(self.path)
+        self._writer = self._index.writer()
+
+    def index_exists(self):
+        return whoosh.index.exists_in(self.path)
+
+    def add_document(self, url, title, content):
+        self._writer.add_document(
+            url=unicode(url),
+            title=unicode(title),
+            content=unicode(content))
+
+    def update_document(self, url, title, content):
+        self._writer.update_document(
+            url=unicode(url),
+            title=unicode(title),
+            content=unicode(content))
+
+    def delete_document(self, url):
+        self._index.delete_by_term('url', unicode(url))
+
+    def commit(self):
+        self._writer.commit(optimize=True)
+
+    def cancel(self):
+        self._writer.cancel()
+{% endhighlight %}
+
+Now the class has everything to create and modify the index. Start the search
+engine with `SearchEngine('./somepath')`. The only argument you need to give is
+the path where the index files are stored. If the directory does not exist it
+will be created automatically. Call `create_index` or `open_index` to create or
+open an index. One of these two must be called before you call `add_document`,
+`update_document` and `delete_document`. After some documents have been added,
+updated or deleted you can call `commit` or `cancel` if the changes don't need
+to be stored.
+
+Something that needs to be mentioned is that you need to strip the HTML from
+your documents before you index them. Otherwise it gets indexed too and
+you might get strange results. I use the following two functions to clean my
+data.
+
+{% highlight python %}
+import re
+
+RE_GIST_JS = re.compile('<script(?: type="text\/javascript")? src="'
+    'http:\/\/gist.github.com\/([0-9]+)\.js"><\/script>')
+def replace_gist_js(text):
+    return RE_GIST_JS.sub(
+        '<a href="http://gist.github.com/\1">[Gist \1]</a>', text)
+
+REGEX_HTML_TAG = re.compile('<[^<]*?/?>')
+def strip_html_tags(text):
+    return REGEX_HTML_TAG.sub('', text)
+{% endhighlight %}
+
+Here's an example. Store the code in `searchengine.py` and put a `__init__.py`
+in the same directory then start a Python shell and change the working directory
+to the one where you stored `searchengine.py`.
+
+{% highlight pycon %}
+>>> from searchengine import *
+>>> search = SearchEngine('./index')
+>>> search.create_index()
+>>> search.add_document('http://example.org/somedocument',
+    'The document title', 'The content of the document')
+>>> search.commit()
+{% endhighlight %}
+
+Now we can create the function that does the searching for us. You should know
+how to use this function.
+
+{% highlight python %}
+import whoosh.qparser
+
+class SearchEngine(object):
+    ...
+    _queryparser = whoosh.qparser.QueryParser('content', schema=schema)
+    def find(self, querystring):
+        s = self._index.searcher()
+        return s.search(self._queryparser.parse(
+            unicode(querystring)), limit=50)
+{% endhighlight %}
+
+Put this function in the SearchEngine class and put it in `searchengine.py`.
+Start up the Python console, just like earlier.
+
+{% highlight pycon %}
+>>> from searchengine import *
+>>> search = SearchEngine('./index')
+>>> search.open_index()
+>>> search.add_document('http://example.org/somedocument_2',
+    'Number 2', 'There is some content here.')
+>>> search.add_document('http://example.org/somedocument_3',
+    'Nothing...', 'But there\'s nothing here. :(')
+>>> search.add_document('http://example.org/somedocument_4',
+    'Fantastic Four', 'Some stuff here!')
+>>> search.add_document('http://example.org/somedocument_5',
+    'Johnny Five', 'Pew pew pew!')
+>>> search.commit()
+>>> results = search.find('content')
+>>> results
+<Top 2 Results for Term('content', u'content') runtime=0.0002169609>
+{% endhighlight %}
+
+It looks like it found 2 documents. We want to see those!
+
+{% highlight pycon %}
+>>> for result in results:
+...     print result
+...
+{'url': u'http://example.org/somedocument',
+    'title': u'The document title'}
+{'url': u'http://example.org/somedocument_2',
+    'title': u'Number 2'}
+{% endhighlight %}
+
+And now with a score!
+
+{% highlight pycon %}
+>>> for i, result in enumerate(results):
+...     print '%s - %s: %s' % (results.score(i),
+...         result['title'], result['url'])
+...
+0.694600288045 - The document title: http://example.org/somedocument
+0.534820030092 - Number 2: http://example.org/somedocument_2
+{% endhighlight %}
+
+Well, that's it. Now you should be able to use Whoosh for basic stuff, but I
+recommend looking through the [documentation][4] and the [source code][5].
+And this class doesn't have any error reporting or search query filtering, so
+don't using it without adding those two first.
+
+All the code from this post can be found at [Gist 538415][6].
+
+
+ [1]: http://bitbucket.org/mchaput/whoosh/wiki/Home
+ [3]: http://packages.python.org/Whoosh/schema.html
+ [4]: http://packages.python.org/Whoosh/
+ [5]: http://bitbucket.org/mchaput/whoosh/src/tip/src/whoosh/
+ [6]: http://gist.github.com/538415

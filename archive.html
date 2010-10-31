@@ -1,0 +1,16 @@
+---
+layout: default
+title: Archive
+---
+
+        <section class="nice-link-list">
+            <header>
+                <h1>{{ page.title }}</h1>
+            </header>
+
+            <ul>
+                {% for post in site.posts %}
+                <li><a href="{{ post.url }}"><time datetime="{{ post.date | date: "%Y-%m-%d" }}" pubdate>{{ post.date | date_to_string }}</time> » {{ post.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
