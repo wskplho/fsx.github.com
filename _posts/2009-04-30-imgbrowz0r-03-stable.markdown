@@ -3,7 +3,7 @@ layout: post
 title: ImgBrowz0r 0.3 Stable!
 author: Frank
 date: 2009-04-30 23:35:00 +0200
-categories: [PHP, ImgBrowz0r, Major release]
+categories: [PHP, ImgBrowz0r, Major-release]
 ---
 
 Yup, a stable release of ImgBrowz0r. And lots of things are improved and fixed

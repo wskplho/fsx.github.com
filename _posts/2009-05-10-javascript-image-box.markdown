@@ -3,7 +3,7 @@ layout: post
 title: Javascript image box
 author: Frank
 date: 2009-05-10 20:15:00 +0200
-categories: [Javascript, Jsimgbox, Major release]
+categories: [Javascript, Jsimgbox, Major-release]
 ---
 
 I wrote a simple "lightbox" script for Mootools that doesn't need extra images

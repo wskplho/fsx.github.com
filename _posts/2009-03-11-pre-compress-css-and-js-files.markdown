@@ -3,7 +3,7 @@ layout: post
 title: Pre-compress CSS and JS files
 author: Frank
 date: 2009-03-11 16:12:50 +0200
-categories: [Optimization, Gzip, How to]
+categories: [Optimization, Gzip, How-to]
 ---
 
 I once wrote a small article about serving gzipped CSS and Javascript files

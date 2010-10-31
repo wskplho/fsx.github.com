@@ -3,7 +3,7 @@ layout: post
 title: ImgBrowz0r 0.3.4
 author: Frank
 date: 2009-09-10 12:10:50 +0200
-categories: [PHP, ImgBrowz0r, Minor release]
+categories: [PHP, ImgBrowz0r, Minor-release]
 ---
 
 It's done and it was actually not much work. And this will be the last release

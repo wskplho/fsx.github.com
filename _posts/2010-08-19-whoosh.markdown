@@ -3,7 +3,7 @@ layout: post
 title: Whoosh!
 author: Frank
 date: 2010-08-19 20:32:50 +0200
-categories: [Whoosh, Python, How to]
+categories: [Whoosh, Python, How-to]
 ---
 
 A few days ago I found [Whoosh][1]. It is a fast, featureful full-text indexing

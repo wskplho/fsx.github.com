@@ -3,7 +3,7 @@ layout: post
 title: Setting up a web development environment
 author: Frank
 date: 2010-01-16 01:15:30 +0200
-categories: [Arch Linux, Nginx, PHP, phpMyAdmin, How to]
+categories: [Arch-Linux, Nginx, PHP, phpMyAdmin, How-to]
 ---
 
 This Monday I was planning to cleanup and reorganize my web development server.

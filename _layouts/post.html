@@ -13,7 +13,7 @@ layout: default
             <p class="tag-list">
                 Tags:
                 {% for tag in page.categories %}
-                <a rel="tag" href="/tags/{{ tag | hash }}.html">{{ tag }}</a>
+                <a rel="tag" href="/tags/{{ tag }}.html">{{ tag }}</a>
                 {% endfor %}
             </p>
         </article>

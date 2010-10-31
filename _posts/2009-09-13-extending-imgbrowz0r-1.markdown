@@ -3,7 +3,7 @@ layout: post
 title: Extending ImgBrowz0r
 author: Frank
 date: 2009-09-13 15:50:50 +0200
-categories: [ImgBrowz0r, PHP, How to]
+categories: [ImgBrowz0r, PHP, How-to]
 ---
 
 Adding titles and descriptions for images and directories. This might be useful

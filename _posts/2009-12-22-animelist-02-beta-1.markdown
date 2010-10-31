@@ -3,7 +3,7 @@ layout: post
 title: AnimeList 0.2-beta1
 author: Frank
 date: 2009-12-22 17:30:39 +0200
-categories: [AnimeList, Python, PyGTK, Beta release]
+categories: [AnimeList, Python, PyGTK, Beta-release]
 ---
 
 Finally! I have been working on this for a while. Also because I rewrote it two

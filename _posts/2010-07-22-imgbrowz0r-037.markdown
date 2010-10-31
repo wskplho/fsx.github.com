@@ -3,7 +3,7 @@ layout: post
 title: ImgBrowz0r 0.3.7
 author: Frank
 date: 2010-07-22 21:39:45 +0200
-categories: [PHP, ImgBrowz0r, Minor release]
+categories: [PHP, ImgBrowz0r, Minor-release]
 ---
 
 A bit late, but it's here, ImgBrowz0r **0.3.7**. Even though this is a minor

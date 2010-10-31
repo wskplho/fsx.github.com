@@ -3,7 +3,7 @@ layout: post
 title: Gravatar for FluxBB 0.1.2
 author: Frank
 date: 2010-07-24 18:39:54 +0200
-categories: [PHP, FluxBB, Gravatar, Minor release]
+categories: [PHP, FluxBB, Gravatar, Minor-release]
 ---
 
 Just added Gravatar for FluxBB 0.1.2 to the [FluxBB modification repository][1].

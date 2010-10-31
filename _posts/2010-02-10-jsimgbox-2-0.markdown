@@ -3,7 +3,7 @@ layout: post
 title: Jsimgbox 2.0
 author: Frank
 date: 2010-02-10 16:21:00 +0200
-categories: [Javascript, Jsimgbox, Major release]
+categories: [Javascript, Jsimgbox, Major-release]
 ---
 
 I't finally done. Well, it was already done last week, but it didn't work in

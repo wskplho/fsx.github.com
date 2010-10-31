@@ -3,7 +3,7 @@ layout: post
 title: ImgBrowz0r 0.3.6
 author: Frank
 date: 2010-02-16 21:17:00 +0200
-categories: [PHP, ImgBrowz0r, Minor release]
+categories: [PHP, ImgBrowz0r, Minor-release]
 ---
 
 <ul class="green-list">

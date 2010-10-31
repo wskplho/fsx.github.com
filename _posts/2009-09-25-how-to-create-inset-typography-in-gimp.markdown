@@ -3,7 +3,7 @@ layout: post
 title: How to Create Inset Typography in Gimp
 author: Frank
 date: 2009-09-25 00:50:50 +0200
-categories: [Gimp, Typography, How to]
+categories: [Gimp, Typography, How-to]
 ---
 
 <ul class="green-list">

@@ -1,5 +1,4 @@
 require 'jekyll'
-require 'digest/md5'
 
 options = Jekyll.configuration({})
 site = Jekyll::Site.new(options)
@@ -22,7 +21,7 @@ HTML
     html << '<p id="tagcloud">'
     site.categories.sort.each do |category, posts|
       font_size = 12 + (posts.count*1.5);
-      html << "<a href=\"/tags/{{ '#{category}' | hash }}.html\" title=\"Entries tagged #{category} (#{posts.count})\" style=\"font-size: #{font_size}px\">#{category}</a>\n"
+      html << "<a href=\"/tags/#{category}.html\" title=\"Entries tagged #{category} (#{posts.count})\" style=\"font-size: #{font_size}px\">#{category}</a>\n"
     end
     html << '</p>'
 
@@ -39,7 +38,6 @@ task :tags do
     puts "Generating tags..."
 
     site.categories.sort.each do |category, posts|
-        hash = (Digest::MD5.hexdigest category)[0..8]
         html =<<-HTML
 ---
 layout: default
@@ -60,7 +58,7 @@ title: Entries tagged "#{category}"
             </ul>
 HTML
 
-        File.open("tags/#{hash}.html", 'w+') do |file|
+        File.open("tags/#{category}.html", 'w+') do |file|
           file.puts html
         end
     end

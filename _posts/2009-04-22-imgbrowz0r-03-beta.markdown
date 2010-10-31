@@ -3,7 +3,7 @@ layout: post
 title: ImgBrowz0r 0.3 Beta
 author: Frank
 date: 2009-04-22 22:35:00 +0200
-categories: [PHP, ImgBrowz0r, Beta release]
+categories: [PHP, ImgBrowz0r, Beta-release]
 ---
 
 After almost 7 months it's almost here, ImgBrowz0r 0.3. I'm now releasing a beta
