@@ -1,6 +1,6 @@
 url: http://localhost:4000
 cdn: http://cdn.61924.nl
-debug: true
+debug: false
 
 safe: false
 
