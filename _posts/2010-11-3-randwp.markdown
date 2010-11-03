@@ -22,7 +22,7 @@ This script needs Python 3. It can easily be modified to work on Python 2.*, but
 Python 3 is the future and it's the default Python in Arch Linux now.
 
 Windows users need to install [pywin32][3] and Mac OS X users [py-appscript][4].
-Othterwise the script can't set the wallpaper to the background. Both modules
+Otherwise the script can't set the wallpaper to the background. Both modules
 work with Python 3.
 
 Windows probably needs a reboot after installing Python and pywin32.
