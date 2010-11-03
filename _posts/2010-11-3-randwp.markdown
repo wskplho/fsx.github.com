@@ -1,0 +1,109 @@
+---
+layout: post
+title: randwp
+author: Frank
+date: 2010-11-3 23:23:08 +0200
+categories: [Python, Python3, Wallbase, Wallpapers, Random]
+---
+
+randwp is a small CLI script that downloads a random wallpaper from the toplist
+on [Wallbase][1] and sets the wallpaper to the desktop background. It's written
+in [Python 3][2] and works on Linux, Windows 7 and it should also work on
+Mac OS X.
+
+A classmate figured out how the URL paramaters worked and how to get Json back
+from the server. And I worked it into a nice little script while I was visiting
+a friend.
+
+
+## Installation
+
+This script needs Python 3. It can easily be modified to work on Python 2.*, but
+Python 3 is the future and it's the default Python in Arch Linux now.
+
+Windows users need to install [pywin32][3] and Mac OS X users [py-appscript][4].
+Othterwise the script can't set the wallpaper to the background. Both modules
+work with Python 3.
+
+Windows probably needs a reboot after installing Python and pywin32.
+
+After you've installed all the required software, grab the code from
+**[Gist 641377 on Github][5]** and put it into a file called `randwp.py`. You
+might need to replace `python` with `python3` on the first line (the
+[Shebang][6] line) if your Linux distro doesn't have Python 3 as the default
+one.
+
+Where the script is located doesn't really matter. You can put it in the `$PATH`
+and make it execable or somewherein your home directory. As long as you know
+where it is.
+
+
+## Usage
+
+The first thing you do after you installed it is:
+
+    $ python randwp.py --help
+
+It'll show [a list with options][7]. Read this and try them all. The only option
+that is required is `-s`, or `--bg-setter`, where to specify which background
+setter you want to use.
+
+`win32` should be used on Windows, `macosx` on Mac OS X and on Linux you can
+specify a command that will set your background. Like [feh][8]. Here's an
+example:
+
+    $ python randwp.py -s 'feh --bg-tile "%path%"'
+
+`%path%` is replaced with the path to the wallpaper.
+
+Some more examples:
+
+    $ python randwp.py -s 'feh --bg-tile "%path%"' -r 1920x1080 --sketchy -p 1..50
+    $ python randwp.py -s 'feh --bg-tile "%path%"' -r 1366x768 --no-sfw --nsfw
+
+For Windows:
+
+    C:\Python31\pythonw.exe C:\path\to\randwp.py -s win32 -r 1366x768 -p 1..5
+
+It's simple. :)
+
+
+## Extras
+
+To let the wallpaper change every X minutes on Linux you can put the following
+snippet in your `~/.xinitrc` file. Don't forget to modify it first.
+
+{% highlight bash %}
+while :; do
+    python /path/to/randwp.py -s 'youbackgroundsetter "%path%"'
+    sleep 20m
+done &
+{% endhighlight %}
+
+On Windows you can use the task scheduler. Note that `pythonw.exe` has been used,
+because you're get a ugly DOS box when the script runs when you use `python.exe`.
+In the *Triggers* tab you can make a schedule for the script.
+
+<a class="jsimgbox" href="{{ site.cdn }}/img/windows-randwp-task-scheduler.png">
+  <img src="{{ site.cdn }}/img/small-windows-randwp-task-scheduler.png" alt="Windows 7 Task Scheduler" />
+</a>
+*(Click for larger image)*
+
+I don't know about Mac OS X, but it probably has something similar.
+
+
+## Uhm...
+
+That's all. If you got suggestions, want to add support for Gnome or KDE or
+report that something is broken -- just send me a mail. You can find my email
+address on the About page.
+
+
+ [1]: http://wallbase.net/
+ [2]: http://docs.python.org/py3k/
+ [3]: http://sourceforge.net/projects/pywin32/
+ [4]: http://appscript.sourceforge.net/py-appscript/index.html
+ [5]: https://gist.github.com/641377
+ [6]: https://secure.wikimedia.org/wikipedia/en/wiki/Shebang_(Unix)
+ [7]: http://pastie.org/1270778
+ [8]: http://derf.homelinux.org/projects/feh/
