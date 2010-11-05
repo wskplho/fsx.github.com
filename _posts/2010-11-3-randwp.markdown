@@ -59,11 +59,24 @@ example:
 Some more examples:
 
     $ python randwp.py -s 'feh --bg-tile "%path%"' -r 1920x1080 --sketchy -p 1..50
-    $ python randwp.py -s 'feh --bg-tile "%path%"' -r 1366x768 --no-sfw --nsfw
+    $ ./randwp.py -s 'feh --bg-tile "%path%"' -r 1366x768 --no-sfw --nsfw
 
 For Windows:
 
     C:\Python31\pythonw.exe C:\path\to\randwp.py -s win32 -r 1366x768 -p 1..5
+
+For [GNOME][9] you can use one of these two:
+
+    $ ./randwp.py -s 'gconftool-2 --type string --set /desktop/gnome/background/picture_filename %path%'
+    $ ./randwp.py -s 'gconftool-2 -t string -s /desktop/gnome/background/picture_filename %path%'
+
+For [KDE][10] you can use:
+
+    ./randwp.py -s 'dcop kdesktop KBackgroundIface setWallpaper %path% 4'
+
+And for [Xfce][11] ypu can use this:
+
+    $ ./randwp.py -s 'xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s %path%'
 
 It's simple. :)
 
@@ -107,3 +120,6 @@ address on the About page.
  [6]: https://secure.wikimedia.org/wikipedia/en/wiki/Shebang_(Unix)
  [7]: http://pastie.org/1270778
  [8]: http://derf.homelinux.org/projects/feh/
+ [9]: http://www.gnome.org/
+ [10]: http://www.kde.org/
+ [11]: http://www.xfce.org/
