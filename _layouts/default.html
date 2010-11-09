@@ -46,29 +46,19 @@
     </footer>
 </div>
 
-<script type="text/javascript">
-var lloogg_clientid = '98100005c159c1d';
-var js_files = [];
-js_files.push(
-    '/js/jsimgbox2.js'
-);
-
-(function() {
-  function async_load() {
-    tag = document.getElementsByTagName('BODY')[0]
-    for (var i=0; i < js_files.length; i++) {
-      var s = document.createElement('script'); s.async = true;
-      s.src = js_files[i]; tag.appendChild(s)
-    }
-  }
-  if (window.attachEvent)
-    window.attachEvent('onload', async_load);
-  else
-    window.addEventListener('load', async_load, false);
-})();
-</script>
+<script type="text/javascript" src="/js/jsimgbox2.js"></script>
 {% if site.debug == false %}
-<script type="text/javascript" src="http://lloogg.com/l.js?c=98100005c159c1d"></script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7806607-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
 {% endif %}
 
 </body>
