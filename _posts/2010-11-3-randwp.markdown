@@ -6,6 +6,8 @@ date: 2010-11-3 23:23:08 +0200
 categories: [Python, Python3, Wallbase, Wallpapers, Random]
 ---
 
+**Edit 19 Nov 2010:** Dcop only works on KDE3.
+
 randwp is a small CLI script that downloads a random wallpaper from the toplist
 on [Wallbase][1] and sets the wallpaper to the desktop background. It's written
 in [Python 3][2] and works on Linux, Windows 7 and it should also work on
@@ -70,7 +72,7 @@ For [GNOME][9] you can use one of these two:
     $ ./randwp.py -s 'gconftool-2 --type string --set /desktop/gnome/background/picture_filename %path%'
     $ ./randwp.py -s 'gconftool-2 -t string -s /desktop/gnome/background/picture_filename %path%'
 
-For [KDE][10] you can use:
+For **[KDE][10]3** you can use:
 
     ./randwp.py -s 'dcop kdesktop KBackgroundIface setWallpaper %path% 4'
 
