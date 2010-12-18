@@ -20,7 +20,7 @@ actions are done and you can't search for anime. At that time I didn't really
 know Python or PyGTK so it was easier to start something myself.
 
 Information, manuals and downloads can be found at the
-[project page](R[url]/projects#h-animelist). Have fun.
+[project page]({{ site.url }}/projects.html#h-animelist). Have fun.
 
 Oh, here are some old screenshots. The first one is a screenshot of my first try
 and the second one is the unreleased 0.1.
