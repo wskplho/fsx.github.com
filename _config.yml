@@ -1,4 +1,4 @@
-url: http://localhost:4000
+url: http://61924.nl
 cdn: http://cdn.61924.nl
 debug: false
 
@@ -6,9 +6,16 @@ safe: false
 
 exclude: [rakefile.rb]
 
-markdown: rdiscount
+markdown: kramdown
 pygments: true
 permalink: /:month-:day-:year/:title.html
 
 rdiscount:
   extensions: [smart, strict]
+
+kramdown:
+  auto_ids: false,
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: false

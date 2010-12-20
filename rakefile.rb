@@ -82,3 +82,18 @@ end
 task :serve do
     sh 'jekyll --server --auto'
 end
+
+# Default
+# -------
+task :default do
+    puts '
+Available commands:
+
+ cloud - Generate tag cloud
+ tags - Create tag pages
+ taggen - Create tag cloud and tag pages
+ generate - Generate Jekyll website
+ serve - Serve Jekyll website and reload when something is changed
+
+'
+end
