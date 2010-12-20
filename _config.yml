@@ -6,7 +6,7 @@ safe: false
 
 exclude: [rakefile.rb]
 
-markdown: kramdown
+markdown: rdiscount
 pygments: true
 permalink: /:month-:day-:year/:title.html
 
