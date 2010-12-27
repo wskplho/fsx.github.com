@@ -216,15 +216,18 @@ article header p {
   font-size: 0.8em;
   color: #777 }
 
-/* --- Nice link list --- */
+/* --- Nice link and project list --- */
 #previous-posts { margin: 4em 0 }
-.nice-link-list ul {
+
+.nice-project-list ul, .nice-link-list ul {
   list-style: none;
   margin: 0;
   padding: 0;
   width: 100% !important }
-.nice-link-list li {
+.nice-project-list li, .nice-link-list li {
   margin: 0.8em 0 }
+.nice-project-list .status,
+.nice-project-list .head a:link, .nice-project-list .head a:visited,
 .nice-link-list li a:link, .nice-link-list li a:visited {
   padding: 0.4em 0.8em;
   text-decoration: none;
@@ -233,6 +236,7 @@ article header p {
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px }
+.nice-project-list .head a:hover, .nice-project-list .head a:active,
 .nice-link-list li a:hover, .nice-link-list li a:active {
   color: #222;
   background: #ccc }
@@ -244,6 +248,29 @@ article header p {
 .link-list-extra li span {
   font-size: 0.7em;
   color: #888 }
+
+.nice-project-list li {
+  margin: 2em 0 }
+
+.nice-project-list .head {
+  margin-bottom: .7em }
+.nice-project-list .desc {
+  font-size: .8em;
+  margin-top: .7em }
+
+.nice-project-list .head a:link, .nice-project-list .head a:visited {
+  background: #ebebeb }
+.nice-project-list .head a.title {
+  background: #ddd }
+
+.nice-project-list .status {
+  color: #fff }
+.nice-project-list .status.active {
+  background: #75C971 }
+.nice-project-list .status.paused {
+  background: #518ae8 }
+.nice-project-list .status.dropped {
+  background: #E85163 }
 
 /* --- Share post --- */
 #share {

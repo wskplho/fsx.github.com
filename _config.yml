@@ -12,10 +12,3 @@ permalink: /:month-:day-:year/:title.html
 
 rdiscount:
   extensions: [smart, strict]
-
-kramdown:
-  auto_ids: false,
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  use_coderay: false
