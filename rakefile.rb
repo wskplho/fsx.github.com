@@ -80,7 +80,7 @@ end
 # Serve website
 # -------------
 task :serve do
-    sh 'jekyll --server --auto --url http://localhost:4000/'
+    sh 'jekyll --server --auto --url http://localhost:4000'
 end
 
 # Default
