@@ -22,7 +22,7 @@ You can also take a look at the [list of software](/software.html) I use.
 
 ## Contact
 
-You can contact me by sending an e-mail to `frank/61924/nl`. Or you can send
+You can contact me by sending an e-mail to `61924.00@gmail.com`. Or you can send
 me a message at [irc://irc.gimp.org][irc1], [irc://irc.freenode.net][irc2] or
 [irc://irc.irchighway.net][irc3]. My nickname is FSX.
 
