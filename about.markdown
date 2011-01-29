@@ -3,8 +3,8 @@ layout: page
 title: About
 ---
 
-Hi, I'm Frank, 20. And I enjoy doing webdevelopment, programming,
-reading/watching manga/anime and listening music. I
+Hi, I'm Frank, 21. And I enjoy doing webdevelopment, programming,
+reading/watching manga/anime and [listening music][Last.fm]. I
 also do other stuff, but I'll keep that to myself. :)
 
 I'm using this website to improve my english and writing 'skills' by writing
@@ -16,13 +16,13 @@ much, but I still write something...
 </a>
 *(Click for larger image)*
 
-My current desktop. [Openbox][], [Tint2][] and [Conky][] on [Archlinux][].
+My current desktop. [Openbox][] and [Tint2][] on [Archlinux][].
 You can also take a look at the [list of software](/software.html) I use.
 
 
 ## Contact
 
-You can contact me by sending an e-mail to `61924.00@gmail.com`. Or you can send
+You can contact me by sending an e-mail to `frank at 61924 dot nl`. Or you can send
 me a message at [irc://irc.gimp.org][irc1], [irc://irc.freenode.net][irc2] or
 [irc://irc.irchighway.net][irc3]. My nickname is FSX.
 
@@ -31,10 +31,12 @@ And you can also find me on [Github][], [Bitbucket][] and [Twitter][].
 
 ## This website
 
-This website is hosted on [Github][] and [Webfaction][] and made with [Jekyll][].
+This website is hosted on [Github][] and [Dropbox][] and made with [Jekyll][].
 And images are displayed with [Jsimgbox][]. Oh, and it's coded in HTML5. So if
 something doesn't work like it should, you know why.
 
+
+ [Last.fm]: http://www.last.fm/user/F1E4
 
  [Archlinux]: http://www.archlinux.org/
  [Openbox]: http://icculus.org/openbox/index.php/Main_Page
@@ -51,6 +53,6 @@ something doesn't work like it should, you know why.
  [Bitbucket]: http://bitbucket.org/fsx
  [Twitter]: http://twitter.com/franksmit
 
- [Webfaction]: http://www.webfaction.com/services/hosting?affiliate=fsx
+ [Dropbox]: https://www.dropbox.com/
  [Jekyll]: http://jekyllrb.com/
  [Jsimgbox]: /projects.html#h-jsimgbox

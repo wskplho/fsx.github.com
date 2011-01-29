@@ -154,7 +154,7 @@ pre {
   padding: 0.5em 0 0.5em 1.5em;
   color: #222 }
 pre, code {
-  font-family: 'DejaVu Sans Mono', Consolas, Inconsolata, 'Lucida Console', monospace }
+  font-family: Inconsolata, 'DejaVu Sans Mono', Consolas, 'Lucida Console', monospace }
 pre code {
   display: block;
   padding: 0 0 0.2em;

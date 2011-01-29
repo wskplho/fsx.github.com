@@ -26,9 +26,6 @@ later.
 
  - **[Medit][]** is a text editor.
 
- - **[Textadept][]** is a fast, minimalist, and ridiculously extensible
-   text editor for Linux, Mac OSX, and Windows.
-
  - **[Vim][]** is an advanced text editor that seeks to provide the power
    of the de-facto Unix editor 'Vi', with a more complete feature set.
 
@@ -63,11 +60,11 @@ later.
  - **[WeeChat][]** is a fast, light and extensible chat client. It runs on
    many platforms (including Linux, BSD and Mac OS).
 
- - **[Sylpheed][]** is a simple, lightweight but featureful, and easy-to-use e-mail client.
-
-
 
 ### Games ###
+
+ - **[Revenge of the Titans][]** is a Tower Defense game with RTS elements.
+   The game was developed by Puppy Games.
 
  - **[Aquaria][]** is a 2D sidescrolling action-adventure computer game designed
    by Alec Holowka and Derek Yu, who together form the independent game company
@@ -117,3 +114,4 @@ later.
  [Atool]: http://www.nongnu.org/atool/
  [Mplayer]: http://www.mplayerhq.hu/
  [SMPlayer]: http://smplayer.sourceforge.net/
+ [Revenge of the Titans]: http://www.puppygames.net/revenge-of-the-titans/
