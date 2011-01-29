@@ -32,8 +32,7 @@ And you can also find me on [Github][], [Bitbucket][] and [Twitter][].
 ## This website
 
 This website is hosted on [Github][] and [Dropbox][] and made with [Jekyll][].
-And images are displayed with [Jsimgbox][]. Oh, and it's coded in HTML5. So if
-something doesn't work like it should, you know why.
+And images are displayed with [Jsimgbox][].
 
 
  [Last.fm]: http://www.last.fm/user/F1E4
