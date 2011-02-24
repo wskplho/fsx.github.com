@@ -15,7 +15,7 @@ the code from there (with [Git][]).
     <ul>
         <li>
             <p class="head">
-                <a class="title" href="http://61924.nl/php-utf8/">php-utf8</a>
+                <a class="title" href="http://php-utf8.61924.nl/">php-utf8</a>
                 <a href="http://github.com/FSX/php-utf8">Source</a>
                 <span class="status active">active</span>
             </p>
