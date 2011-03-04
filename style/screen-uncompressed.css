@@ -183,6 +183,11 @@ blockquote {
   padding: 1em;
   background: #E85163 }
 
+.warning-ie6-bar {
+  margin: 1.5em 0;
+  text-align: center }
+.warning-ie6-bar img { border: none }
+
 ul.green-list {
   background: #9DFF74;
   margin: 1.8em 0;
