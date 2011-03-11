@@ -6,6 +6,8 @@ date: 2011-03-09 15:23:50 +0200
 categories: [Tornado, PostgreSQL, Psycopg, Python]
 ---
 
+**Update:** I've made a repositoryon Github: [github.com/FSX/momoko][5].
+
 Since last week I've been trying to get asynchronous [Psycopg][1] working with
 [Tornado][2] after I got some [good help on the mailinglist][3]. I've put the
 code in a **[gist on Github][4]**. An example is also included.
@@ -41,7 +43,7 @@ class MainHandler(BaseHandler):
         self.finish()
 {% endhighlight %}
 
-I was considering trying to add a way to run multiple asynchronous queries in 
+I was considering trying to add a way to run multiple asynchronous queries in
 one request, but I'll wait with that untill I need it in the project I'm working
 on.
 
@@ -50,3 +52,4 @@ on.
  [2]: http://www.tornadoweb.org/
  [3]: http://groups.google.com/group/python-tornado/browse_thread/thread/56b50ea629baf965
  [4]: https://gist.github.com/861193
+ [5]: https://github.com/FSX/momoko
