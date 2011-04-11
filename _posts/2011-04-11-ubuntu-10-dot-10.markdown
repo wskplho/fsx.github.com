@@ -1,0 +1,41 @@
+---
+layout: post
+title: Ubuntu 10.10
+author: Frank
+date: 2011-04-11 15:23:50 +0200
+categories: [Ubuntu, Review]
+---
+
+[Three weeks ago][1] I installed Ubuntu 10.10 on my laptop, because I was having 
+problems again with NetworkManager again on Arch Linux. I wanted something that
+didn't require me fixing programs that don't give me a decent error message,
+because I only use my laptop for work and school.
+
+It took an hour or two (or three) to install and configure everything. Replacing 
+programs, choosing a GTK theme, looking for a nice wallpaper. Almost no command-line 
+actions were required. Only when I wanted to add some new software sources
+and a kernel with the [CK patchset][2]. I don't mind doing things with a 
+terminal, it even goes faster, but non-technical users like GUIs so I guess it's
+a good thing.
+
+There are some things that I don't like. Like Nautilus. It takes a while before
+it appears and on top of that it's ugly. I haven't been able to find a PPA for
+Thunar 1.2, but it looks like it is included in Ubuntu 11.04, so I'll wait for that
+one.
+
+It's not as responsive as the previous Arch Linux installation and the start up
+time is also longer, but I'm pretty happy with it besides that. Look at that nice 
+screenshot.
+
+<a class="jsimgbox" href="{{ site.cdn }}/img/ubuntu-1010-laptop.png">
+  <img src="{{ site.cdn }}/img/tn-ubuntu-1010-laptop.png" alt="Ubuntu 10.10" />
+</a>
+*(Click for larger image)*
+
+I'll keep Arch Linux on my desktop PC since it's much easier to change things,
+it's faster (depends on what you install ofcourse), the AUR is awesome and I
+have the time to configure stuff.
+
+
+ [1]: https://twitter.com/#!/franksmit/status/48867202115444736
+ [2]: http://ck-hack.blogspot.com/
