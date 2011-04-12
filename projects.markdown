@@ -15,6 +15,15 @@ the code from there (with [Git][]).
     <ul>
         <li>
             <p class="head">
+                <a class="title" href="http://momoko.61924.nl/">Momoko</a>
+                <a href="http://github.com/FSX/momoko">Source</a>
+                <span class="status active">active</span>
+            </p>
+            <p class="desc">Asynchronous <a href="http://initd.org/psycopg/">Psycopg</a>
+                wrapper for <a href="http://www.tornadoweb.org/">Tornado</a>.</p>
+        </li>
+        <li>
+            <p class="head">
                 <a class="title" href="http://php-utf8.61924.nl/">php-utf8</a>
                 <a href="http://github.com/FSX/php-utf8">Source</a>
                 <span class="status active">active</span>
