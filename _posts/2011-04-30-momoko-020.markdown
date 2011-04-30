@@ -1,0 +1,27 @@
+---
+layout: post
+title: Momoko 0.2.0
+author: Frank
+date: 2011-04-30 14:37:50 +0100
+categories: [Tornado, PostgreSQL, Psycopg, Python]
+---
+
+A new version of the [asynchronous Psycopg wrapper for Tornado][1]. Here is the
+list of changes for this release:
+
+ - Removed `executemany` from `Momoko`, because it can not be used in asynchronous mode.
+ - Added a wrapper class, `Momoko`, for `Pool`, `BatchQuery` and `QueryChain`.
+ - Added the `QueryChain` class for executing a chain of queries (and callables)
+   in a certain order.
+ - Added the `BatchQuery` class for executing batches of queries at the same time.
+ - Improved `Pool._clean_pool`. It threw an `IndexError` when more than one
+   connection needed to be closed.
+
+And some documentation has been put online at [momoko.61924.nl][4]. Momoko
+can be downloaded from [PyPi][2] and [Github][3].
+
+
+ [1]: {{ site.url }}/03-09-2011/async-psycopg-for-tornado.html
+ [2]: http://pypi.python.org/pypi/Momoko/
+ [3]: https://github.com/FSX/momoko
+ [4]: http://momoko.61924.nl/
