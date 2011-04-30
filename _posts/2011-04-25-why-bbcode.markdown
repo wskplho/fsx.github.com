@@ -3,7 +3,7 @@ layout: post
 title: Why BBCode?
 author: Frank
 date: 2011-04-25 13:30:50 +0100
-categories: [BBcode, Markdown, Forums]
+categories: [BBcode, Markdown, Forums, Rant]
 ---
 
 Why is [BBCode][1] used on (almost) all forums? It was initially some kind of safe
