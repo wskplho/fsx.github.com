@@ -15,12 +15,21 @@ the code from there (with [Git][]).
     <ul>
         <li>
             <p class="head">
+                <a class="title" href="http://pantyshot.61924.nl/">Pantyshot</a>
+                <a href="https://github.com/FSX/pantyshot">Source</a>
+                <span class="status active">active</span>
+            </p>
+            <p class="desc">A Python binding for <a href="">Upskirt</a>, a fast Markdown library written in C.</p>
+        </li>
+        <li>
+            <p class="head">
                 <a class="title" href="http://momoko.61924.nl/">Momoko</a>
                 <a href="http://github.com/FSX/momoko">Source</a>
                 <span class="status active">active</span>
             </p>
             <p class="desc">Asynchronous <a href="http://initd.org/psycopg/">Psycopg</a>
-                wrapper for <a href="http://www.tornadoweb.org/">Tornado</a>.</p>
+                wrapper for <a href="http://www.tornadoweb.org/">Tornado</a>, a
+                non-blocking webserver.</p>
         </li>
         <li>
             <p class="head">
@@ -70,7 +79,7 @@ the code from there (with [Git][]).
                 <a class="title" href="/projects/imgbrowz0r.html">ImgBrowz0r</a>
                 <a href="http://github.com/FSX/imgbrowz0r/">Source</a>
                 <a href="http://github.com/FSX/imgbrowz0r/downloads">Downloads</a>
-                <span class="status active">active</span>
+                <span class="status paused">paused</span>
             </p>
             <p class="desc">A simple gallery class that's written in PHP5. It can be
             integrated into a website, cms or blog, but it also runs good as a standalone
