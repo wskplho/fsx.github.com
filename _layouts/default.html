@@ -58,7 +58,20 @@
     </footer>
 </div>
 
+<script type="text/javascript" src="/js/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="/js/history.js"></script>
 <script type="text/javascript" src="/js/jsimgbox2.js"></script>
+<script type="text/javascript">
+Jsimgbox.init('jsimgbox');
+jQuery.ajaxify({
+  'content-id' : '#main-content',
+  'animation': [{opacity: 0}, {opacity: 1}],
+  'duration': 200,
+  'callback' : function() {
+    Jsimgbox.scan('jsimgbox');
+  }
+});
+</script>
 
 {% if site.debug == false %}
 <script type="text/javascript">lloogg_clientid = "98100005c159c1d";</script>
