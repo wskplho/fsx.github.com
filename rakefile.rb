@@ -81,10 +81,8 @@ end
 # Optimze/Minimize CSS and JS
 # -------------
 task :optimize do
-    sh 'yuicompressor --type css ./style/screen-uncompressed.css >> ./style/screen.css'
-    sh 'yuicompressor --type js ./js/jquery-1.6.1.js >> ./js/all.js'
-    sh 'yuicompressor --type js ./js/history.js >> ./js/all.js'
-    sh 'yuicompressor --type js ./js/jsimgbox2.js >> ./js/all.js'
+    sh 'yuicompressor --type css ./style/screen-uncompressed.css > ./style/screen.css'
+    sh 'yuicompressor --type js ./js/jsimgbox2.js > ./js/all.js'
 end
 
 # Serve website
