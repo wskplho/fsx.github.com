@@ -15,11 +15,11 @@ the code from there (with [Git][]).
     <ul>
         <li>
             <p class="head">
-                <a class="title" href="http://pantyshot.61924.nl/">Pantyshot</a>
-                <a href="https://github.com/FSX/pantyshot">Source</a>
+                <a class="title" href="http://misaka.61924.nl/">Misaka</a>
+                <a href="https://github.com/FSX/misaka">Source</a>
                 <span class="status active">active</span>
             </p>
-            <p class="desc">A Python binding for <a href="">Upskirt</a>, a fast Markdown library written in C.</p>
+            <p class="desc">A Python binding for <a href="">Upskirt</a>, a fast Markdown library written in C. Works in Python 2 and 3.</p>
         </li>
         <li>
             <p class="head">
