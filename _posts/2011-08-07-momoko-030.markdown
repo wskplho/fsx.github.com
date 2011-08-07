@@ -1,0 +1,49 @@
+---
+layout: post
+title: Momoko 0.3.0
+author: Frank
+date: 2011-08-07 22:10:00 +0100
+categories: [Tornado, PostgreSQL, Psycopg, Python, Python3]
+---
+
+Today I present a new release of Momoko, version 0.3.0. It's been a while ago
+since I released 0.2.0 (three months ago). I'll blame on school and my vacation. ;)
+
+The following changes have been made:
+
+ * Renamed `momoko.Momoko` to `momoko.Client`.
+ * Programming in blocking-style is now possible with `AdispClient`.
+ * Support for Python 3 has been added.
+ * The batch and chain fucntion now accepts different arguments. See the
+   documentation for details.
+
+The nicest addition is that you can now query the database without using callbacks.
+This is possible by using [adisp][0]. Here are some examples:
+
+{% highlight python %}
+cursor = yield self.db.execute('SELECT 42, 12, 40, 11;')
+
+cursors = yield self.db.batch({
+    'query1': ['SELECT 42, 12, %s, %s;', (23, 56)],
+    'query2': 'SELECT 1, 2, 3, 4, 5;',
+    'query3': 'SELECT 465767, 4567, 3454;'
+})
+
+cursors = yield self.db.chain((
+    ['SELECT 42, 12, %s, 11;', (23,)],
+    'SELECT 1, 2, 3, 4, 5;'
+))
+{% endhighlight %}
+
+As you can see there is a `yield` keyword. You also need to put an extra decorator
+on your get/post/somethingelse function, `momoko.process`. That's all.
+
+View the updated [documentation on momoko.61924.nl][1] and download the new
+release from [PyPi][2].
+
+Have fun.
+
+
+ [0]: https://launchpad.net/adisp
+ [1]: http://momoko.61924.nl/
+ [2]: http://pypi.python.org/pypi/Momoko
