@@ -26,10 +26,10 @@ website. Like patches, documentation or other stuff.
 
 ## Websites
 
- * **medorion.net** (16 May 2009). A website for Medorion. Made with Shinobu and
+ * **isalazyadmin.net** (16 May 2009). A website for someone. Made with Shinobu and
    a custom forum (design, CMS and forum). Now (May 2011) converted to a [Jekyll][1]
    website.
-   [(visit website)](http://www.medorion.net/)
+   [(visit website)](http://isalazyadmin.net/)
 
 
  [1]: http://jekyllrb.com/

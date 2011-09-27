@@ -5,11 +5,10 @@ title: About
 
 Hi, I'm Frank, 21. And I enjoy doing webdevelopment, programming,
 reading/watching manga/anime and [listening music][Last.fm]. I
-also do other stuff, but I'll keep that to myself. :)
+also do other stuff.
 
-I'm using this website to improve my english and writing 'skills' by writing
-blog posts and to host some information about my projects. I don't write
-much, but I still write something...
+I mostly use this website to announce projects (and the releases), but sometimes
+I publish other stuff.
 
 <a class="jsimgbox" href="{{ site.cdn }}/img/current_desktop.png">
   <img src="{{ site.cdn }}/img/current_desktop_small.png" alt="My Arch Linux desktop" />
@@ -22,9 +21,9 @@ You can also take a look at the [list of software](/software.html) I use.
 
 ## Contact
 
-You can contact me by sending an e-mail to `frank at 61924 dot nl`. Or you can send
-me a message at [irc://irc.gimp.org][irc1], [irc://irc.freenode.net][irc2] or
-[irc://irc.irchighway.net][irc3]. My nickname is FSX.
+You can contact me by sending an e-mail to `frank at 61924 dot nl`. Or you can
+send me a message at [irc.gimp.org][irc1], [irc.freenode.net][irc2],
+[irc.irchighway.net][irc3], [irc.rizon.net][irc4]. My nickname is FSX.
 
 And you can also find me on [Github][], [Bitbucket][] and [Twitter][].
 
@@ -47,6 +46,7 @@ And images are displayed with [Jsimgbox][].
  [irc1]: irc://irc.gimp.org
  [irc2]: irc://irc.freenode.net
  [irc3]: irc://irc.irchighway.net
+ [irc4]: irc://irc.rizon.net
 
  [Github]: http://github.com/FSX
  [Bitbucket]: http://bitbucket.org/fsx

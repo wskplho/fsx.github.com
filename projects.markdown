@@ -19,7 +19,8 @@ the code from there (with [Git][]).
                 <a href="https://github.com/FSX/misaka">Source</a>
                 <span class="status active">active</span>
             </p>
-            <p class="desc">A Python binding for <a href="">Upskirt</a>, a fast Markdown library written in C. Works in Python 2 and 3.</p>
+            <p class="desc">A Python binding for <a href="https://github.com/tanoku/sundown">Sundown</a>,
+                a fast Markdown library written in C. Works in Python 2, 3 and PyPy.</p>
         </li>
         <li>
             <p class="head">
@@ -27,7 +28,7 @@ the code from there (with [Git][]).
                 <a href="http://github.com/FSX/momoko">Source</a>
                 <span class="status active">active</span>
             </p>
-            <p class="desc">Asynchronous <a href="http://initd.org/psycopg/">Psycopg</a>
+            <p class="desc">Asynchronous <a href="http://initd.org/psycopg/">Psycopg2</a>
                 wrapper for <a href="http://www.tornadoweb.org/">Tornado</a>, a
                 non-blocking webserver.</p>
         </li>
