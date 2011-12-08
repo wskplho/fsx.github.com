@@ -16,7 +16,7 @@ to check if it wasn't offensive or plain weird (they thought it was funny too).
 The name followed the same theme as the library I used, Upskirt. I did not mean
 to cause people problems with the name I had chosen.
 
-It that surprised me was that people who had problems with the name
+It surprised me was that people who had problems with the name
 didn't contact me about it. Instead I saw the blogpost after someone emailed me
 about it. And after I commented on that blogpost I received two more messages.
 
