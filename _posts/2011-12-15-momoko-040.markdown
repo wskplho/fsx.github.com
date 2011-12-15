@@ -1,0 +1,30 @@
+---
+layout: post
+title: Momoko 0.4.0
+author: Frank
+date: 2011-12-15 18:30:00 +0100
+categories: [Tornado, PostgreSQL, Psycopg, Python, Python3]
+---
+
+A new release of Momoko! This time it's 0.4.0. It took a while, but it's done
+now. Here are the changes:
+
+ * Reorganized classes and files.
+ * Renamed `momoko.Client` to `momoko.AsyncClient`.
+ * Renamed `momoko.Pool` to `momoko.AsyncPool`.
+ * Added a client and pool for blocking connections, `momoko.BlockingClient`
+   and `momoko.BlockingPool`.
+ * Added `PoolError` to the import list in `__init__.py`.
+ * Added an example that uses Tornado's [gen][1] module and [Swift][2].
+ * Callbacks are now optional for `AsyncClient`.
+ * `AsyncPool` and `Poller` now accept a ioloop argument. [[fzzbt]][3]
+ * Unit tests have been added. [[fzzbt]][3]
+
+Grab it from [PyPi][4] or from [Github][5]!
+
+
+[1]: http://www.tornadoweb.org/documentation/gen.html
+[2]: http://code.naeseth.com/swirl/
+[3]: https://github.com/fzzbt
+[4]: http://pypi.python.org/pypi/Momoko/0.4.0
+[5]: https://github.com/FSX/momoko
