@@ -15,7 +15,7 @@ I publish other stuff.
 </a>
 *(Click for larger image)*
 
-My current desktop. [Openbox][] and [Tint2][] on [Archlinux][].
+My current desktop. [i3][] on [Archlinux][].
 You can also take a look at the [list of software](/software.html) I use.
 
 
@@ -37,11 +37,7 @@ And images are displayed with [Jsimgbox][].
  [Last.fm]: http://www.last.fm/user/F1E4
 
  [Archlinux]: http://www.archlinux.org/
- [Openbox]: http://icculus.org/openbox/index.php/Main_Page
- [Tint2]: http://code.google.com/p/tint2/
- [Conky]: http://conky.sourceforge.net/
- [Urxvtc]: http://software.schmorp.de/pkg/rxvt-unicode.html
- [Pymp]: http://jdolan.dyndns.org/trac/wiki/Pymp
+ [i3]: http://i3wm.org/
 
  [irc1]: irc://irc.gimp.org
  [irc2]: irc://irc.freenode.net
