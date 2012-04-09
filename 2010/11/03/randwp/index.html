@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>randwp — Blog — 61924.nl</title>
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!-- <link rel="stylesheet/less" type="text/css" href="http://61924.nl/assetsscreen.less"> -->
+<link rel="stylesheet" type="text/css" href="http://61924.nl/assets/all.css">
+<link rel="alternate" type="application/atom+xml" href="http://61924.nl/atom.xml" />
+</head>
+<body id="blog-section">
+<nav id="navigation">
+<h1>61924</h1>
+<div>
+
+<a id="nav-blog" href="http://61924.nl/">blog</a>
+
+<a id="nav-archive" href="http://61924.nl/archive/">archive</a>
+
+<a id="nav-projects" href="http://61924.nl/projects/">projects</a>
+
+<a id="nav-about" href="http://61924.nl/about/">about</a>
+
+</div>
+</nav>
+<section id="content">
+
+<article class="post">
+<header>
+<h1>randwp</h1>
+<h2>03 Nov 2010</h2>
+</header>
+<p><strong>Note:</strong> Does not work currently. Needs to be updated.</p>
+
+<p>randwp is a small CLI script that downloads a random wallpaper from the toplist
+on <a href="http://wallbase.net/">Wallbase</a> and sets the wallpaper to the desktop background. It&#39;s written
+in <a href="http://docs.python.org/py3k/">Python 3</a> and works on Linux, Windows 7 and it should also work on
+Mac OS X.</p>
+
+<p>A classmate figured out how the URL paramaters worked and how to get Json back
+from the server. And I worked it into a nice little script while I was visiting
+a friend.</p>
+
+<h2>Installation</h2>
+
+<p>This script needs Python 3. It can easily be modified to work on Python 2.*, but
+Python 3 is the future and it&#39;s the default Python in Arch Linux now.</p>
+
+<p>Windows users need to install <a href="http://sourceforge.net/projects/pywin32/">pywin32</a> and Mac OS X users <a href="http://appscript.sourceforge.net/py-appscript/index.html">py-appscript</a>.
+Otherwise the script can&#39;t set the wallpaper to the background. Both modules
+work with Python 3.</p>
+
+<p>Windows probably needs a reboot after installing Python and pywin32.</p>
+
+<p>After you&#39;ve installed all the required software, grab the code from
+<strong><a href="https://gist.github.com/641377">Gist 641377 on Github</a></strong> and put it into a file called <code>randwp.py</code>. You
+might need to replace <code>python</code> with <code>python3</code> on the first line (the
+<a href="https://secure.wikimedia.org/wikipedia/en/wiki/Shebang_(Unix)">Shebang</a> line) if your Linux distro doesn&#39;t have Python 3 as the default
+one.</p>
+
+<p>Where the script is located doesn&#39;t really matter. You can put it in the <code>$PATH</code>
+and make it execable or somewherein your home directory. As long as you know
+where it is.</p>
+
+<h2>Usage</h2>
+
+<p>The first thing you do after you installed it is:</p>
+
+<pre class="highlight"><code>$ python randwp.py --help</code></pre>
+
+<p>It&#39;ll show <a href="http://pastie.org/1270778">a list with options</a>. Read this and try them all. The only option
+that is required is <code>-s</code>, or <code>--bg-setter</code>, where to specify which background
+setter you want to use.</p>
+
+<p><code>win32</code> should be used on Windows, <code>macosx</code> on Mac OS X and on Linux you can
+specify a command that will set your background. Like <a href="http://derf.homelinux.org/projects/feh/">feh</a>. Here&#39;s an
+example:</p>
+
+<pre class="highlight"><code>$ python randwp.py -s &#39;feh --bg-tile &quot;%path%&quot;&#39;</code></pre>
+
+<p><code>%path%</code> is replaced with the path to the wallpaper.</p>
+
+<p>Some more examples:</p>
+
+<pre class="highlight"><code>$ python randwp.py -s &#39;feh --bg-tile &quot;%path%&quot;&#39; -r 1920x1080 --sketchy -p 1..50
+$ ./randwp.py -s &#39;feh --bg-tile &quot;%path%&quot;&#39; -r 1366x768 --no-sfw --nsfw</code></pre>
+
+<p>For Windows:</p>
+
+<pre class="highlight"><code>C:\Python31\pythonw.exe C:\path\to\randwp.py -s win32 -r 1366x768 -p 1..5</code></pre>
+
+<p>For <a href="http://www.gnome.org/">GNOME</a> you can use one of these two:</p>
+
+<pre class="highlight"><code>$ ./randwp.py -s &#39;gconftool-2 --type string --set /desktop/gnome/background/picture_filename %path%&#39;
+$ ./randwp.py -s &#39;gconftool-2 -t string -s /desktop/gnome/background/picture_filename %path%&#39;</code></pre>
+
+<p>For <strong><a href="http://www.kde.org/">KDE</a>3</strong> you can use:</p>
+
+<pre class="highlight"><code>./randwp.py -s &#39;dcop kdesktop KBackgroundIface setWallpaper %path% 4&#39;</code></pre>
+
+<p>And for <a href="http://www.xfce.org/">Xfce</a> ypu can use this:</p>
+
+<pre class="highlight"><code>$ ./randwp.py -s &#39;xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s %path%&#39;</code></pre>
+
+<p>It&#39;s simple. :)</p>
+
+<h2>Extras</h2>
+
+<p>To let the wallpaper change every X minutes on Linux you can put the following
+snippet in your <code>~/.xinitrc</code> file. Don&#39;t forget to modify it first.</p>
+<pre class="highlight"><code><span class="k">while</span> :; <span class="k">do</span>
+<span class="k">    </span>python /path/to/randwp.py -s <span class="s1">&#39;youbackgroundsetter &quot;%path%&quot;&#39;</span>
+    sleep 20m
+<span class="k">done</span> &amp;
+</code></pre>
+<p>On Windows you can use the task scheduler. Note that <code>pythonw.exe</code> has been used,
+because you&#39;re get a ugly DOS box when the script runs when you use <code>python.exe</code>.
+In the <em>Triggers</em> tab you can make a schedule for the script.</p>
+
+<p><a href="https://dl.dropbox.com/u/18064043/61924.nl/img/windows-randwp-task-scheduler.png" title="jsimgbox"><img src="https://dl.dropbox.com/u/18064043/61924.nl/img/small-windows-randwp-task-scheduler.png" alt="Windows 7 Task Scheduler"></a>
+<em>(Click for larger image)</em></p>
+
+<p>I don&#39;t know about Mac OS X, but it probably has something similar.</p>
+
+<h2>Uhm&hellip;</h2>
+
+<p>That&#39;s all. If you got suggestions, want to add support for Gnome or KDE or
+report that something is broken &ndash; just send me a mail. You can find my email
+address on the About page.</p>
+
+<footer>
+<ul class="tags">
+<li><a href="http://61924.nl/tags/python/">python</a></li><li><a href="http://61924.nl/tags/wallbase/">wallbase</a></li><li><a href="http://61924.nl/tags/wallpapers/">wallpapers</a></li><li><a href="http://61924.nl/tags/random/">random</a></li>
+</ul>
+</footer>
+</article>
+
+</section>
+<footer id="bottom">
+<p>&copy; 2011-2012. <a href="https://github.com/FSX">Frank Smit</a>.</p>
+</footer>
+<script type="text/javascript" src="http://61924.nl/assets/js/ender.min.js"></script>
+<script type="text/javascript" src="http://61924.nl/assets/js/jsimgbox2.min.js"></script>
+<script type="text/javascript">
+$.domReady(function () {
+Jsimgbox.init($('a[title=jsimgbox]'));
+});
+</script>
+</body>
+</html>

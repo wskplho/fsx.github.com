@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>How to Create Inset Typography in Gimp — Blog — 61924.nl</title>
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!-- <link rel="stylesheet/less" type="text/css" href="http://61924.nl/assetsscreen.less"> -->
+<link rel="stylesheet" type="text/css" href="http://61924.nl/assets/all.css">
+<link rel="alternate" type="application/atom+xml" href="http://61924.nl/atom.xml" />
+</head>
+<body id="blog-section">
+<nav id="navigation">
+<h1>61924</h1>
+<div>
+
+<a id="nav-blog" href="http://61924.nl/">blog</a>
+
+<a id="nav-archive" href="http://61924.nl/archive/">archive</a>
+
+<a id="nav-projects" href="http://61924.nl/projects/">projects</a>
+
+<a id="nav-about" href="http://61924.nl/about/">about</a>
+
+</div>
+</nav>
+<section id="content">
+
+<article class="post">
+<header>
+<h1>How to Create Inset Typography in Gimp</h1>
+<h2>25 Sep 2009</h2>
+</header>
+<p><em>Update September 27th, 2009:</em> This tutorial is now also available at the <a href="http://www.gimptalk.com/forum/how-to-create-inset-typography-in-gimp-t44501.html">Gimptalk forum</a>.</p>
+
+<p>I found a tutorial for this effect on Sixrevisions for Photoshop. And because
+it was a beginners level tutorial &ndash; it wouldn&#39;t be too hard to &ldquo;port&rdquo; it to
+Gimp.</p>
+
+<p>So the credits go to the guy who wrote the tutorial on Sixrevisions.</p>
+
+<p><strong>Notes:</strong></p>
+
+<ul>
+<li>I&#39;m using the development version of Gimp (2.7) so some things can look a bit different.</li>
+<li><em>Select &gt; Invert</em> means that you have to go the the <em>Select</em> menu and click <em>Invert</em>.</li>
+<li>Original tutorial: <a href="http://sixrevisions.com/tutorials/photoshop-tutorials/how-to-create-inset-typography-in-photoshop/">How to Create Inset Typography in Photoshop</a></li>
+</ul>
+
+<h2>Step 1</h2>
+
+<p>Make a new image and draw a linear gradient (color codes: <code>#016edf</code>, <code>#024f80</code>).</p>
+
+<p><a href="https://dl.dropbox.com/u/18064043/61924.nl/img/gimp/gimp_inset_type-step1.png" title="jsimgbox"><img src="https://dl.dropbox.com/u/18064043/61924.nl/img/gimp/t_gimp_inset_type-step1.png" alt="Step 1"></a>
+<em>(Click for larger image)</em></p>
+
+<h2>Step 2</h2>
+
+<p>Make a new text layer and put this in the center of the canvas. It&#39;s best to
+use a big or bold font.</p>
+
+<p>Then make three new layers called: &#39;Text highlight&#39;, &#39;Text inner-shadow&#39; and
+&#39;Text background&#39;.</p>
+
+<p><a href="https://dl.dropbox.com/u/18064043/61924.nl/img/gimp/gimp_inset_type-step2.png" title="jsimgbox"><img src="https://dl.dropbox.com/u/18064043/61924.nl/img/gimp/t_gimp_inset_type-step2.png" alt="Step 2"></a>
+<em>(Click for larger image)</em></p>
+
+<h2>Step 3</h2>
+
+<p>Now select the text layer and do <strong>Text to selection</strong>. Then select the
+<strong>Text background</strong> layer and fill the background with a gradient, a darker
+one than the background.</p>
+
+<p>Don&#39;t delete/undo the selection. We need it for the next step. :)</p>
+
+<p><a href="https://dl.dropbox.com/u/18064043/61924.nl/img/gimp/gimp_inset_type-step3.png" title="jsimgbox"><img src="https://dl.dropbox.com/u/18064043/61924.nl/img/gimp/t_gimp_inset_type-step3.png" alt="Step 3"></a>
+<em>(Click for larger image)</em></p>
+
+<h2>Step 4</h2>
+
+<p>Select <strong>Text highlight</strong>, make the selection one pixel smaller (with <em>Select &gt; Shrink</em>)
+and invert the selection with <em>Ctrl+i</em> or <em>Select &gt; Invert</em>. Now fill the
+<strong>Text highlight</strong> layer with a white color.</p>
+
+<p>After you&#39;ve done that you invert the selection again, make it one pixel bigger
+(with <em>Select &gt; Grow</em>), invert the selection again and press delete or <em>Edit &gt; Clear</em>.</p>
+
+<p>You can clear the selection with <em>Select &gt; None</em> or <em>Ctrl+Shift+A</em>.</p>
+
+<p>You&#39;ll get something like you see in the following image. We don&#39;t use
+<em>Select &gt; Border</em>, because it won&#39;t look that good.</p>
+
+<p><a href="https://dl.dropbox.com/u/18064043/61924.nl/img/gimp/gimp_inset_type-step4.png" title="jsimgbox"><img src="https://dl.dropbox.com/u/18064043/61924.nl/img/gimp/t_gimp_inset_type-step4.png" alt="Step 4"></a>
+<em>(Click for larger image)</em></p>
+
+<h2>Step 5</h2>
+
+<p>Select the text layer again and do <strong>Text to selection</strong>. Now select the
+<strong>Text inner-shadow</strong> layer, make the selection two pixels smaller, invert it
+and fill it with a black color.</p>
+
+<p>Now invert the selection again, make it 2 pixels bigger, invert it again and
+press delete or <em>Edit &gt; Clear</em>. You should have a black border now that&#39;s
+behind the white border.</p>
+
+<p><a href="https://dl.dropbox.com/u/18064043/61924.nl/img/gimp/gimp_inset_type-step5-1.png" title="jsimgbox"><img src="https://dl.dropbox.com/u/18064043/61924.nl/img/gimp/t_gimp_inset_type-step5-1.png" alt="Step 5"></a>
+<em>(Click for larger image)</em></p>
+
+<p>Invert the selection again (yes&hellip; again&hellip;), open the Gaussian Blur dialog
+(<em>Filters &gt; Blur &gt; Gaussian Blur</em>) and apply the settings you see in the
+following image.</p>
+
+<p><a href="https://dl.dropbox.com/u/18064043/61924.nl/img/gimp/gimp_inset_type-step5-2.png" title="jsimgbox"><img src="https://dl.dropbox.com/u/18064043/61924.nl/img/gimp/t_gimp_inset_type-step5-2.png" alt="Step 5"></a>
+<em>(Click for larger image)</em></p>
+
+<p>You can clear the selection now.</p>
+
+<h2>Step 6</h2>
+
+<p>Select the <strong>Text highlight</strong> layer and apply Gaussian Blur on it with the blur
+radius set to one. Then move the layer below the <strong>Text background</strong> layer and
+move it one pixel the the right and one pixel to the bottom.</p>
+
+<p><a href="https://dl.dropbox.com/u/18064043/61924.nl/img/gimp/gimp_inset_type-step6-1.png" title="jsimgbox"><img src="https://dl.dropbox.com/u/18064043/61924.nl/img/gimp/t_gimp_inset_type-step6-1.png" alt="Step 6"></a>
+<em>(Click for larger image)</em></p>
+
+<p>Select the <strong>Text inner-shadow</strong> layer and move it one pixel the the right and
+one pixel to the bottom.</p>
+
+<p>Now select the text layer again and do <strong>Text to selection</strong>, select the the
+<strong>Text inner-shadow</strong> layer again, invert the selection and press delete or
+<em>Edit &gt; Clear</em>.</p>
+
+<p><a href="https://dl.dropbox.com/u/18064043/61924.nl/img/gimp/gimp_inset_type-step6-2.png" title="jsimgbox"><img src="https://dl.dropbox.com/u/18064043/61924.nl/img/gimp/t_gimp_inset_type-step6-2.png" alt="Step 6"></a>
+<em>(Click for larger image)</em></p>
+
+<h3>Step 7</h3>
+
+<p>Now we have to fine-tune it to make it look good. You can copy some layer,
+adjust the opacity settings, add some highlights or patterns (hint: layer masks
+are useful for this).</p>
+
+<p><img src="https://dl.dropbox.com/u/18064043/61924.nl/img/gimp/gimp_inset_type-step7-1.png" alt="Step 7"></p>
+
+<p><img src="https://dl.dropbox.com/u/18064043/61924.nl/img/gimp/gimp_inset_type-step7-2.png" alt="Step 7"></p>
+
+<footer>
+<ul class="tags">
+<li><a href="http://61924.nl/tags/gimp/">gimp</a></li><li><a href="http://61924.nl/tags/typography/">typography</a></li>
+</ul>
+</footer>
+</article>
+
+</section>
+<footer id="bottom">
+<p>&copy; 2011-2012. <a href="https://github.com/FSX">Frank Smit</a>.</p>
+</footer>
+<script type="text/javascript" src="http://61924.nl/assets/js/ender.min.js"></script>
+<script type="text/javascript" src="http://61924.nl/assets/js/jsimgbox2.min.js"></script>
+<script type="text/javascript">
+$.domReady(function () {
+Jsimgbox.init($('a[title=jsimgbox]'));
+});
+</script>
+</body>
+</html>

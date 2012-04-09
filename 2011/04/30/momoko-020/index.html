@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Momoko 0.2.0 — Blog — 61924.nl</title>
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!-- <link rel="stylesheet/less" type="text/css" href="http://61924.nl/assetsscreen.less"> -->
+<link rel="stylesheet" type="text/css" href="http://61924.nl/assets/all.css">
+<link rel="alternate" type="application/atom+xml" href="http://61924.nl/atom.xml" />
+</head>
+<body id="blog-section">
+<nav id="navigation">
+<h1>61924</h1>
+<div>
+
+<a id="nav-blog" href="http://61924.nl/">blog</a>
+
+<a id="nav-archive" href="http://61924.nl/archive/">archive</a>
+
+<a id="nav-projects" href="http://61924.nl/projects/">projects</a>
+
+<a id="nav-about" href="http://61924.nl/about/">about</a>
+
+</div>
+</nav>
+<section id="content">
+
+<article class="post">
+<header>
+<h1>Momoko 0.2.0</h1>
+<h2>30 Apr 2011</h2>
+</header>
+<p>A new version of the <a href="/2011/03/06/async-psycopg-for-tornado/">asynchronous Psycopg wrapper for Tornado</a>. Here is the
+list of changes for this release:</p>
+
+<ul>
+<li>Removed <code>executemany</code> from <code>Momoko</code>, because it can not be used in asynchronous mode.</li>
+<li>Added a wrapper class, <code>Momoko</code>, for <code>Pool</code>, <code>BatchQuery</code> and <code>QueryChain</code>.</li>
+<li>Added the <code>QueryChain</code> class for executing a chain of queries (and callables)
+in a certain order.</li>
+<li>Added the <code>BatchQuery</code> class for executing batches of queries at the same time.</li>
+<li>Improved <code>Pool._clean_pool</code>. It threw an <code>IndexError</code> when more than one
+connection needed to be closed.</li>
+</ul>
+
+<p>And some documentation has been put online at <a href="http://momoko.61924.nl/">momoko.61924.nl</a>. Momoko
+can be downloaded from <a href="http://pypi.python.org/pypi/Momoko/">PyPi</a> and <a href="https://github.com/FSX/momoko">Github</a>.</p>
+
+<footer>
+<ul class="tags">
+<li><a href="http://61924.nl/tags/tornado/">tornado</a></li><li><a href="http://61924.nl/tags/psycopg2/">psycopg2</a></li><li><a href="http://61924.nl/tags/python/">python</a></li><li><a href="http://61924.nl/tags/momoko/">momoko</a></li>
+</ul>
+</footer>
+</article>
+
+</section>
+<footer id="bottom">
+<p>&copy; 2011-2012. <a href="https://github.com/FSX">Frank Smit</a>.</p>
+</footer>
+<script type="text/javascript" src="http://61924.nl/assets/js/ender.min.js"></script>
+<script type="text/javascript" src="http://61924.nl/assets/js/jsimgbox2.min.js"></script>
+<script type="text/javascript">
+$.domReady(function () {
+Jsimgbox.init($('a[title=jsimgbox]'));
+});
+</script>
+</body>
+</html>

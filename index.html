@@ -1,14 +1,275 @@
----
-layout: default
-title: Index
----
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Blog — 61924.nl</title>
+  <!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!-- <link rel="stylesheet/less" type="text/css" href="http://61924.nl/assetsscreen.less"> -->
+  <link rel="stylesheet" type="text/css" href="http://61924.nl/assets/all.css">
+  <link rel="alternate" type="application/atom+xml" href="http://61924.nl/atom.xml" />
+</head>
+<body id="blog-section">
 
-        <section id="previous-posts" class="nice-link-list">
-            <ul>
-                {% for post in site.posts limit:10 %}
-                <li><a href="{{ post.url }}"><time datetime="{{ post.date | date: "%Y-%m-%d" }}" pubdate>{{ post.date | date_to_string }}</time> » {{ post.title }}</a></li>
-                {% endfor %}
-            </ul>
+<nav id="navigation">
+  <h1>61924</h1>
 
-            <p>View <a href="/tags/cloud.html">all tags</a> or view the <a href="/archive.html">archive →</a></p>
-        </section>
+  <div>
+    
+      <a id="nav-blog" href="http://61924.nl/">blog</a>
+    
+      <a id="nav-archive" href="http://61924.nl/archive/">archive</a>
+    
+      <a id="nav-projects" href="http://61924.nl/projects/">projects</a>
+    
+      <a id="nav-about" href="http://61924.nl/about/">about</a>
+    
+  </div>
+</nav>
+
+<section id="content">
+
+
+  <article class="post">
+    <header>
+      <h1><a href="http://61924.nl/2012/04/09/status-misaka-102/">Misaka 1.0.2</a></h1>
+      <h2>09 Apr 2012</h2>
+    </header>
+
+    <p>Time for a new release. After spending almost all my free days on getting things
+to work it&#39;s done now. The changes include fixes for Unicode, Python 3, Windows/Visual Studio,
+error reporting and a nice set of unit tests.</p>
+
+<p>The documentation does not use Sphinx anymore. I&#39;ve written a small utility myself
+to generate the documentation and it&#39;s much simpler. :)</p>
+
+<p>Get the files from <a href="http://pypi.python.org/pypi/misaka">PyPi</a> or <a href="https://github.com/FSX/misaka">Github</a> and read stuff (documentation) <a href="http://misaka.61924.nl/">here</a>!</p>
+
+
+    <footer>
+      <ul class="tags">
+        <li><a href="http://61924.nl/tags/python/">python</a></li><li><a href="http://61924.nl/tags/markdown/">markdown</a></li><li><a href="http://61924.nl/tags/sundown/">sundown</a></li><li><a href="http://61924.nl/tags/misaka/">misaka</a></li>
+      </ul>
+    </footer>
+  </article>
+
+  <article class="post">
+    <header>
+      <h1><a href="http://61924.nl/2012/01/20/status-report-1/">Status Report #1</a></h1>
+      <h2>20 Jan 2012</h2>
+    </header>
+
+    <p>In a week or two most of the work at school will be done and I&#39;ll be able to
+work more on my projects again. And after this semester I&#39;ll start with my
+(academic) minor, <em>Digital Arts</em>. I&#39;m sure it won&#39;t take up all my time.</p>
+
+<p>It&#39;s not hard to work on something and forget about the other thing you&#39;re
+working on. And some scribbles in my notebook aren&#39;t going to prevent that. So
+I&#39;ll put a status report on my blog so I won&#39;t forget about it. It also kinda
+forces me to be less lazy, because I post this in a public place. And forces
+me to do stuff.</p>
+
+<h2>Thrift</h2>
+
+<p>I&#39;m working on a <a href="http://thrift.apache.org/">Thrift</a> client for <a href="http://www.tornadoweb.org/">Tornado</a>. It took a bit longer to get
+started than expected, but I&#39;ve figured out how it works (mostly) now and
+started to document the binary protocol.</p>
+
+<p>After the documentation is done I&#39;ll start with making a client that communicates
+with the Thrift server in the <a href="http://svn.apache.org/viewvc/thrift/trunk/tutorial/py/">tutorial code</a>. Once that&#39;s done and once I
+figured out how everything should be structured I&#39;ll start with a IDL compiler.</p>
+
+<p>I haven&#39;t thought out that last one yet, but after looking through the Python
+code that Thrift generates I saw that it wasn&#39;t easy to make it work for Tornado.
+So I guess I&#39;ll have to make something that generates Tornado friendly code.
+Luckily the IDL doesn&#39;t look to complex.</p>
+
+<h2>Misaka</h2>
+
+<p>All functionality of 1.0.0 is done, but it hasn&#39;t been tested completely and the
+documentation needs to be updated. There&#39;s probably also need for a separate
+Python 2 and 3 package, because the C code that <a href="http://cython.org/">Cython</a> generates is
+different for 2.X and 3.X.</p>
+
+<h2>Momoko</h2>
+
+<p>I think it&#39;s time for 0.4.1 soon. There are not a lot of changes, but
+<a href="https://github.com/FSX/momoko/issues/11">recovery from closed connections</a> is a nice one. I&#39;m going to look
+into a minor issue regarding error handling and then 0.4.1 will be released.</p>
+
+<h2>FluxBB/php-utf8</h2>
+
+<p>There are some <a href="http://fluxbb.org/development/core/tickets/?q=&amp;m=all&amp;o=32&amp;t=all&amp;s=1&amp;c=all&amp;i=all">tickets assignment to me</a> and I&#39;ll have to update a
+number of things in php-utf8.</p>
+
+<p>Franz converted all unit tests to PHPUnit and I added namespaces to everything.
+I&#39;ll now have to reformat all code according to the code formatting guidelines
+(I like neatly formatted code). And while I&#39;m at it I&#39;ll have to check the code
+too.</p>
+
+<p>I&#39;m also thinking of making all of php-utf8&#39;s documentation in <a href="http://sphinx.pocoo.org/">Sphinx</a>. It
+works perfectly for Python-based projects. So why not for PHP-based projects?</p>
+
+
+    <footer>
+      <ul class="tags">
+        <li><a href="http://61924.nl/tags/momoko/">momoko</a></li><li><a href="http://61924.nl/tags/misaka/">misaka</a></li><li><a href="http://61924.nl/tags/fluxbb/">fluxbb</a></li><li><a href="http://61924.nl/tags/php-utf8/">php-utf8</a></li><li><a href="http://61924.nl/tags/thrift/">thrift</a></li><li><a href="http://61924.nl/tags/tornado/">tornado</a></li>
+      </ul>
+    </footer>
+  </article>
+
+  <article class="post">
+    <header>
+      <h1><a href="http://61924.nl/2011/12/15/momoko-040/">Momoko 0.4.0</a></h1>
+      <h2>15 Dec 2011</h2>
+    </header>
+
+    <p>A new release of Momoko! This time it&#39;s 0.4.0. It took a while, but it&#39;s done
+now. Here are the changes:</p>
+
+<ul>
+<li>Reorganized classes and files.</li>
+<li>Renamed <code>momoko.Client</code> to <code>momoko.AsyncClient</code>.</li>
+<li>Renamed <code>momoko.Pool</code> to <code>momoko.AsyncPool</code>.</li>
+<li>Added a client and pool for blocking connections, <code>momoko.BlockingClient</code>
+and <code>momoko.BlockingPool</code>.</li>
+<li>Added <code>PoolError</code> to the import list in <code>__init__.py</code>.</li>
+<li>Added an example that uses Tornado&#39;s <a href="http://www.tornadoweb.org/documentation/gen.html">gen</a> module and <a href="http://code.naeseth.com/swirl/">Swift</a>.</li>
+<li>Callbacks are now optional for <code>AsyncClient</code>.</li>
+<li><code>AsyncPool</code> and <code>Poller</code> now accept a ioloop argument. <a href="https://github.com/fzzbt">[fzzbt]</a></li>
+<li>Unit tests have been added. <a href="https://github.com/fzzbt">[fzzbt]</a></li>
+</ul>
+
+<p>Grab it from <a href="http://pypi.python.org/pypi/Momoko/0.4.0">PyPi</a> or from <a href="https://github.com/FSX/momoko">Github</a>!</p>
+
+
+    <footer>
+      <ul class="tags">
+        <li><a href="http://61924.nl/tags/tornado/">tornado</a></li><li><a href="http://61924.nl/tags/psycopg2/">psycopg2</a></li><li><a href="http://61924.nl/tags/python/">python</a></li><li><a href="http://61924.nl/tags/momoko/">momoko</a></li>
+      </ul>
+    </footer>
+  </article>
+
+  <article class="post">
+    <header>
+      <h1><a href="http://61924.nl/2011/12/08/misaka-1-b1/">Misaka 1.0.0 Beta 1</a></h1>
+      <h2>08 Dec 2011</h2>
+    </header>
+
+    <p>It&#39;s been a while. Like a few months. And I&#39;ve been working on duplicating
+<a href="https://github.com/tanoku/redcarpet">Redcarpet&#39;s</a> functionality. I think everything should work now, but I still
+need to test everything properly and that&#39;s why I&#39;m releasing a beta. And the
+API documentation is also lacking, but the the code itself is understandable
+enough.</p>
+
+<p>My understanding of C is still limited, but thanks to Redcarpet&#39;s source code
+I figured out how to implement everything. Not everything is in C. The largest
+part is actually done in Cython. Which is a great tool. I&#39;ve also included the
+C code that&#39;s generated by Cython, so you don&#39;t have to install Cython to
+compile Misaka. Only when you want to regenerate the C code (in that case you
+use <code>setup_cython.py</code>).</p>
+
+<p>Besides the big API change, Misaka now also accepts Unicode strings, but the
+side effect is that it&#39;s faster in Python 3. And Python 2 is a lot slower in the
+benchmark, but you won&#39;t really notice it (if you&#39;re not parsing a large
+document 10,000 times).</p>
+
+<p>Here&#39;s a small example (the old API is also available).</p>
+<pre class="highlight"><code><span class="kn">from</span> <span class="nn">misaka</span> <span class="kn">import</span> <span class="n">Markdown</span><span class="p">,</span> <span class="n">HtmlRenderer</span><span class="p">,</span> <span class="n">SmartyPants</span>
+
+<span class="k">class</span> <span class="nc">BleepRenderer</span><span class="p">(</span><span class="n">HtmlRenderer</span><span class="p">,</span> <span class="n">SmartyPants</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="n">md</span> <span class="o">=</span> <span class="n">Markdown</span><span class="p">(</span><span class="n">BleepRenderer</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="n">md</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s">&#39;Some &quot;stuff&quot; here&#39;</span><span class="p">))</span>
+<span class="c"># &lt;p&gt;Some &amp;ldquo;stuff&amp;rdquo; here&lt;/p&gt;</span>
+</code></pre>
+<p>The classes are located in <a href="https://github.com/FSX/misaka/blob/master/src/misaka.pyx">misaka.pyx</a> and all the callbacks you can
+implement in your own renderer are listed in <a href="https://github.com/FSX/misaka/blob/master/src/misaka.pyx">wrapper.c</a>. That&#39;s quite
+unfriendly documentation at the moment, but I&#39;m planning to change that.</p>
+
+<p>For now just fetch the code from the <a href="https://github.com/FSX/misaka">Github repository</a>. If something is not
+working, please <a href="https://github.com/FSX/misaka/issues">report it</a>.</p>
+
+<p>Have fun.</p>
+
+
+    <footer>
+      <ul class="tags">
+        <li><a href="http://61924.nl/tags/python/">python</a></li><li><a href="http://61924.nl/tags/markdown/">markdown</a></li><li><a href="http://61924.nl/tags/sundown/">sundown</a></li><li><a href="http://61924.nl/tags/misaka/">misaka</a></li>
+      </ul>
+    </footer>
+  </article>
+
+  <article class="post">
+    <header>
+      <h1><a href="http://61924.nl/2011/08/07/momoko-030/">Momoko 0.3.0</a></h1>
+      <h2>07 Aug 2011</h2>
+    </header>
+
+    <p>Today I present a new release of Momoko, version 0.3.0. It&#39;s been a while ago
+since I released 0.2.0 (three months ago). I&#39;ll blame on school and my vacation. ;)</p>
+
+<p>The following changes have been made:</p>
+
+<ul>
+<li>Renamed <code>momoko.Momoko</code> to <code>momoko.Client</code>.</li>
+<li>Programming in blocking-style is now possible with <code>AdispClient</code>.</li>
+<li>Support for Python 3 has been added.</li>
+<li>The batch and chain fucntion now accepts different arguments. See the
+documentation for details.</li>
+</ul>
+
+<p>The nicest addition is that you can now query the database without using callbacks.
+This is possible by using <a href="https://launchpad.net/adisp">adisp</a>. Here are some examples:</p>
+<pre class="highlight"><code><span class="n">cursor</span> <span class="o">=</span> <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&#39;SELECT 42, 12, 40, 11;&#39;</span><span class="p">)</span>
+
+<span class="n">cursors</span> <span class="o">=</span> <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">batch</span><span class="p">({</span>
+    <span class="s">&#39;query1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;SELECT 42, 12, </span><span class="si">%s</span><span class="s">, </span><span class="si">%s</span><span class="s">;&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="mi">56</span><span class="p">)],</span>
+    <span class="s">&#39;query2&#39;</span><span class="p">:</span> <span class="s">&#39;SELECT 1, 2, 3, 4, 5;&#39;</span><span class="p">,</span>
+    <span class="s">&#39;query3&#39;</span><span class="p">:</span> <span class="s">&#39;SELECT 465767, 4567, 3454;&#39;</span>
+<span class="p">})</span>
+
+<span class="n">cursors</span> <span class="o">=</span> <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">chain</span><span class="p">((</span>
+    <span class="p">[</span><span class="s">&#39;SELECT 42, 12, </span><span class="si">%s</span><span class="s">, 11;&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">23</span><span class="p">,)],</span>
+    <span class="s">&#39;SELECT 1, 2, 3, 4, 5;&#39;</span>
+<span class="p">))</span>
+</code></pre>
+<p>As you can see there is a <code>yield</code> keyword. You also need to put an extra decorator
+on your get/post/somethingelse function, <code>momoko.process</code>. That&#39;s all.</p>
+
+<p>View the updated <a href="http://momoko.61924.nl/">documentation on momoko.61924.nl</a> and download the new
+release from <a href="http://pypi.python.org/pypi/Momoko">PyPi</a>.</p>
+
+<p>Have fun.</p>
+
+
+    <footer>
+      <ul class="tags">
+        <li><a href="http://61924.nl/tags/tornado/">tornado</a></li><li><a href="http://61924.nl/tags/psycopg2/">psycopg2</a></li><li><a href="http://61924.nl/tags/python/">python</a></li><li><a href="http://61924.nl/tags/momoko/">momoko</a></li>
+      </ul>
+    </footer>
+  </article>
+
+
+
+<p class="blog-nav"><a href="http://61924.nl/archive/">See older posts at the archive →</a></p>
+
+
+</section>
+
+<footer id="bottom">
+  <p>&copy; 2011-2012. <a href="https://github.com/FSX">Frank Smit</a>.</p>
+</footer>
+
+<script type="text/javascript" src="http://61924.nl/assets/js/ender.min.js"></script>
+<script type="text/javascript" src="http://61924.nl/assets/js/jsimgbox2.min.js"></script>
+<script type="text/javascript">
+$.domReady(function () {
+  Jsimgbox.init($('a[title=jsimgbox]'));
+});
+</script>
+
+</body>
+</html>

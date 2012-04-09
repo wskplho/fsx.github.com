@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Random wallpapers — Blog — 61924.nl</title>
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!-- <link rel="stylesheet/less" type="text/css" href="http://61924.nl/assetsscreen.less"> -->
+<link rel="stylesheet" type="text/css" href="http://61924.nl/assets/all.css">
+<link rel="alternate" type="application/atom+xml" href="http://61924.nl/atom.xml" />
+</head>
+<body id="blog-section">
+<nav id="navigation">
+<h1>61924</h1>
+<div>
+
+<a id="nav-blog" href="http://61924.nl/">blog</a>
+
+<a id="nav-archive" href="http://61924.nl/archive/">archive</a>
+
+<a id="nav-projects" href="http://61924.nl/projects/">projects</a>
+
+<a id="nav-about" href="http://61924.nl/about/">about</a>
+
+</div>
+</nav>
+<section id="content">
+
+<article class="post">
+<header>
+<h1>Random wallpapers</h1>
+<h2>24 Mar 2010</h2>
+</header>
+<p>A simple bash/dash script for setting a random wallpaper (at startup).</p>
+
+<p>I initially made something with Python, but <a href="http://bbs.archlinux.org/viewtopic.php?pid=713894#p713894">someone pointed out</a> that it
+could be done much easier. After modifying it a bit, the following was the
+result:</p>
+
+<p><code>set_random_wp</code></p>
+<pre class="highlight"><code><span class="c">#!/bin/dash</span>
+
+<span class="k">if</span> <span class="o">[</span> ! -f ~/.wpdb <span class="o">]</span>
+<span class="k">then</span>
+<span class="k">    </span>update_wpdb
+<span class="k">fi</span>
+
+feh --bg-center <span class="s2">&quot;$(cat ~/.wpdb | shuf -n1)&quot;</span>
+</code></pre>
+<p><code>update_wpdb</code></p>
+<pre class="highlight"><code><span class="c">#!/bin/dash</span>
+find /home/frank/Images/Wallpapers -type f &gt; ~/.wpdb
+</code></pre>
+<p><strong>Note:</strong> Replace <code>#!/bin/dash</code> with <code>#!/bin/bash</code> or <code>#!/bin/sh</code> if you don&#39;t
+have or don&#39;t want to use <a href="http://en.wikipedia.org/wiki/Debian_Almquist_shell">dash</a>.</p>
+
+<p>Put the above two scripts in <code>/usr/bin</code> or in an other directory from <code>$PATH</code>.
+And put the following code in <code>.xinitrc</code> (above the <code>exec &lt;window manager&gt;</code>
+line) or in an other startup script.</p>
+<pre class="highlight"><code><span class="k">while</span> :; <span class="k">do</span>
+<span class="k">    </span>set_random_wp
+    sleep 20m
+<span class="k">done</span> &amp;
+</code></pre>
+<p>It&#39;ll set a random wallpaper each 20 minutes.</p>
+
+<footer>
+<ul class="tags">
+<li><a href="http://61924.nl/tags/bash/">bash</a></li><li><a href="http://61924.nl/tags/wallpapers/">wallpapers</a></li><li><a href="http://61924.nl/tags/random/">random</a></li>
+</ul>
+</footer>
+</article>
+
+</section>
+<footer id="bottom">
+<p>&copy; 2011-2012. <a href="https://github.com/FSX">Frank Smit</a>.</p>
+</footer>
+<script type="text/javascript" src="http://61924.nl/assets/js/ender.min.js"></script>
+<script type="text/javascript" src="http://61924.nl/assets/js/jsimgbox2.min.js"></script>
+<script type="text/javascript">
+$.domReady(function () {
+Jsimgbox.init($('a[title=jsimgbox]'));
+});
+</script>
+</body>
+</html>

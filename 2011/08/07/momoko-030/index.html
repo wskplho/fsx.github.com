@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Momoko 0.3.0 — Blog — 61924.nl</title>
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!-- <link rel="stylesheet/less" type="text/css" href="http://61924.nl/assetsscreen.less"> -->
+<link rel="stylesheet" type="text/css" href="http://61924.nl/assets/all.css">
+<link rel="alternate" type="application/atom+xml" href="http://61924.nl/atom.xml" />
+</head>
+<body id="blog-section">
+<nav id="navigation">
+<h1>61924</h1>
+<div>
+
+<a id="nav-blog" href="http://61924.nl/">blog</a>
+
+<a id="nav-archive" href="http://61924.nl/archive/">archive</a>
+
+<a id="nav-projects" href="http://61924.nl/projects/">projects</a>
+
+<a id="nav-about" href="http://61924.nl/about/">about</a>
+
+</div>
+</nav>
+<section id="content">
+
+<article class="post">
+<header>
+<h1>Momoko 0.3.0</h1>
+<h2>07 Aug 2011</h2>
+</header>
+<p>Today I present a new release of Momoko, version 0.3.0. It&#39;s been a while ago
+since I released 0.2.0 (three months ago). I&#39;ll blame on school and my vacation. ;)</p>
+
+<p>The following changes have been made:</p>
+
+<ul>
+<li>Renamed <code>momoko.Momoko</code> to <code>momoko.Client</code>.</li>
+<li>Programming in blocking-style is now possible with <code>AdispClient</code>.</li>
+<li>Support for Python 3 has been added.</li>
+<li>The batch and chain fucntion now accepts different arguments. See the
+documentation for details.</li>
+</ul>
+
+<p>The nicest addition is that you can now query the database without using callbacks.
+This is possible by using <a href="https://launchpad.net/adisp">adisp</a>. Here are some examples:</p>
+<pre class="highlight"><code><span class="n">cursor</span> <span class="o">=</span> <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&#39;SELECT 42, 12, 40, 11;&#39;</span><span class="p">)</span>
+
+<span class="n">cursors</span> <span class="o">=</span> <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">batch</span><span class="p">({</span>
+    <span class="s">&#39;query1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;SELECT 42, 12, </span><span class="si">%s</span><span class="s">, </span><span class="si">%s</span><span class="s">;&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="mi">56</span><span class="p">)],</span>
+    <span class="s">&#39;query2&#39;</span><span class="p">:</span> <span class="s">&#39;SELECT 1, 2, 3, 4, 5;&#39;</span><span class="p">,</span>
+    <span class="s">&#39;query3&#39;</span><span class="p">:</span> <span class="s">&#39;SELECT 465767, 4567, 3454;&#39;</span>
+<span class="p">})</span>
+
+<span class="n">cursors</span> <span class="o">=</span> <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">chain</span><span class="p">((</span>
+    <span class="p">[</span><span class="s">&#39;SELECT 42, 12, </span><span class="si">%s</span><span class="s">, 11;&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">23</span><span class="p">,)],</span>
+    <span class="s">&#39;SELECT 1, 2, 3, 4, 5;&#39;</span>
+<span class="p">))</span>
+</code></pre>
+<p>As you can see there is a <code>yield</code> keyword. You also need to put an extra decorator
+on your get/post/somethingelse function, <code>momoko.process</code>. That&#39;s all.</p>
+
+<p>View the updated <a href="http://momoko.61924.nl/">documentation on momoko.61924.nl</a> and download the new
+release from <a href="http://pypi.python.org/pypi/Momoko">PyPi</a>.</p>
+
+<p>Have fun.</p>
+
+<footer>
+<ul class="tags">
+<li><a href="http://61924.nl/tags/tornado/">tornado</a></li><li><a href="http://61924.nl/tags/psycopg2/">psycopg2</a></li><li><a href="http://61924.nl/tags/python/">python</a></li><li><a href="http://61924.nl/tags/momoko/">momoko</a></li>
+</ul>
+</footer>
+</article>
+
+</section>
+<footer id="bottom">
+<p>&copy; 2011-2012. <a href="https://github.com/FSX">Frank Smit</a>.</p>
+</footer>
+<script type="text/javascript" src="http://61924.nl/assets/js/ender.min.js"></script>
+<script type="text/javascript" src="http://61924.nl/assets/js/jsimgbox2.min.js"></script>
+<script type="text/javascript">
+$.domReady(function () {
+Jsimgbox.init($('a[title=jsimgbox]'));
+});
+</script>
+</body>
+</html>
