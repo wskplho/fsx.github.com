@@ -1,7 +1,7 @@
 (function() {
   var $bg = $('#bg'),
       $win = $(window),
-      available = [800, 1024, 1366];
+      available = [800, 1024, 1366, 1920];
 
   var delay = (function(){
     var timer = 0;
@@ -23,7 +23,7 @@
   }
 
   function setBg() {
-    var vd = viewport()
+    var vd = viewport(),
         chosen = -1;
     for (var i=0; i<available.length; i++) {
       if (available[i] >= vd.width) {
