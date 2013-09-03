@@ -1,7 +1,7 @@
 (function() {
   var $bg = $('#bg'),
       $win = $(window),
-      available = [800, 1024, 1366, 1920, 3906];
+      available = [800, 1024, 1366, 1920];
 
   var delay = (function(){
     var timer = 0;
